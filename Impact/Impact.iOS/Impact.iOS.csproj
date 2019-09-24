@@ -130,4 +130,16 @@
       <Name>Impact</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\outline_chat_black_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\outline_house_black_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\outline_swap_calls_black_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\outline_account_box_black_18dp.png" />
+  </ItemGroup>
 </Project>

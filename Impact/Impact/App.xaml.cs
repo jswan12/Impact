@@ -10,7 +10,7 @@ namespace Impact
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new TabMainPage();
         }
 
         protected override void OnStart()

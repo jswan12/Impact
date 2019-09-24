@@ -4,17 +4,16 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Impact.MainPage">
+             x:Class="Impact.HomePage"
+             Title="Home" IconImageSource="outline_house_black_18dp.png">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <Label Text="Home Page"/>
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-        <Button Text="Test Button"
+            <Button Text="Test Button"
                 HorizontalOptions="CenterAndExpand"
                 VerticalOptions="CenterAndExpand"
                 Clicked="testButton_Clicked"/>
-    </StackLayout>
-
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>
