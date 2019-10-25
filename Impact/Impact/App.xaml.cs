@@ -1,16 +1,31 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using System.IO;
 
 namespace Impact
 {
     public partial class App : Application
     {
+        static LocalDatabase database;
+        public static LocalDatabase Database
+        {
+            get
+            {
+                if (database == null)
+                {
+                    database = new LocalDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Impact-LocalDatabase.db3"));
+                }
+                return database;
+            }
+        }
         public App()
         {
             InitializeComponent();
 
-            MainPage = new TabMainPage();
+            MainPage = new LoginPage();
+
+            //MainPage = new TabMainPage();
         }
 
         protected override void OnStart()

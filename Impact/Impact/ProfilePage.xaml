@@ -7,8 +7,21 @@
              x:Class="Impact.ProfilePage"
              Title="Profile" IconImageSource="outline_account_box_black_18dp.png">
     <ContentPage.Content>
-        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-            <Label Text="Profile Page"/>
+        <StackLayout Margin="20,35,20,20">
+            <Entry x:Name="nameEntry"
+               Placeholder="Enter name" />
+            <Entry x:Name="emailEntry"
+               Placeholder="Enter email" />
+            <Button Text="Add to Local Database"
+                Clicked="OnButtonClicked" />
+            <ListView x:Name="listView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Name}"
+                              Detail="{Binding Email}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
