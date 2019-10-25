@@ -145,4 +145,10 @@
   <ItemGroup>
     <BundleResource Include="Resources\outline_account_box_black_18dp.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Impact_Logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Impact Logo.png" />
+  </ItemGroup>
 </Project>
