@@ -12,5 +12,6 @@ namespace Impact
          * account. This information is needed for the SMTP Server to send the actual email */
         public static string SmtpEmail = "<Email@gmail.com>";
         public static string SmtpPassword = "<Password>";
+        public static string SmtpPassword = "<Password>";
     }
 }
