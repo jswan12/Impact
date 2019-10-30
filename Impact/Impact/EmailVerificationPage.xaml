@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Impact.EmailVerificationPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Please confirm the verification code"
+                HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="Center" 
+                FontSize="25"/>
+            <Label Text="sent to user.email"
+                HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="Center"
+                FontSize="25"/>
+            <Entry x:Name="verificationCodeEntry"
+                   HorizontalOptions="CenterAndExpand"
+                   Placeholder="Enter Code Here" 
+                   Scale="1.75" 
+                   Keyboard="Numeric" 
+                   MaxLength="6" 
+                   CharacterSpacing="4" 
+                   ClearButtonVisibility="WhileEditing"/>
+            <Button Text="Submit"
+                    Clicked="SubmitButtonClicked"
+                    HorizontalOptions="Center"
+                     Scale="1.5"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
