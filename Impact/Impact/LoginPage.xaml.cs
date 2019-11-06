@@ -22,7 +22,7 @@ namespace Impact
         private async void OnButtonClicked(object sender, EventArgs e)
         {
             HttpClient client = new HttpClient();
-            var uri = new Uri(string.Format("https://asp-impact.azurewebsites.net/api/Login?Email_Address=" + email_AddressEntry.Text + "&Password=" + passwordEntry.Text));
+            var uri = new Uri(string.Format("https://asp-impact.azurewebsites.net/api/Login?email_address=" + email_AddressEntry.Text + "&password=" + passwordEntry.Text));
             HttpResponseMessage response;
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             response = await client.GetAsync(uri);
