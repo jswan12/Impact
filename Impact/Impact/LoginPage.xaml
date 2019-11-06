@@ -8,7 +8,7 @@
     <ContentPage.Content>
         <StackLayout Margin="20,35,20,20">
             <Label Text="Impact" FontSize="Large" HorizontalTextAlignment="Center" VerticalTextAlignment="Start"/>
-            <Entry x:Name="usernameEntry"
+            <Entry x:Name="email_AddressEntry"
                Placeholder="Enter Username" />
             <Entry x:Name="passwordEntry"
                Placeholder="Enter Password" />
