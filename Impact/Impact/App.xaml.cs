@@ -23,7 +23,7 @@ namespace Impact
         {
             InitializeComponent();
 
-            MainPage = new LoginPage();
+            MainPage = new NavigationPage(new StartPage());
 
             //MainPage = new TabMainPage();
         }
