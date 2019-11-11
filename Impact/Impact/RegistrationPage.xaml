@@ -5,26 +5,86 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Impact.RegistrationPage"
-             Title="Sign Up"
-    <!--<ContentPage.Content>
-        <AbsoluteLayout Margin="5,0,5,5">
-            <FlexLayout IsVisible="True" JustifyContent="SpaceEvenly" Direction="Column" AlignItems="Center" Margin="30,0,30,0" >
-                <Image Source="ImpactLogo.png" HeightRequest="60" WidthRequest="60" FlexLayout.AlignSelf="Center" BackgroundColor="Transparent" />
-                <Entry x:Name="emailEntry" Placeholder="Email ID" ReturnType="Next" Keyboard="Email" FontSize="Medium" FlexLayout.AlignSelf="Stretch"  HorizontalOptions="CenterAndExpand"  TextColor="Black" >
-
+             x:Name="RegistrationPage_content"  
+             Title="Impact"
+             BackgroundColor="Transparent" 
+             NavigationPage.HasBackButton="True">
+    <ContentPage.Content>
+        <AbsoluteLayout Margin="3,0,3,3">
+            <FlexLayout IsVisible="True" JustifyContent="SpaceEvenly" Direction="Column" AlignItems="Center" Margin="20,0,20,0" >
+                <Entry x:Name="emailEntry"
+                    Placeholder="Email Address"
+                    ReturnType="Next"
+                    Keyboard="Email"
+                    FontSize="Medium"
+                    FlexLayout.AlignSelf="Stretch"
+                    HorizontalOptions="CenterAndExpand"
+                    TextColor="Black" >
                 </Entry>
-                <Entry x:Name="userNameEntry" ReturnType="Next" MaxLength="10" Placeholder="User Name" FontSize="Medium" FlexLayout.AlignSelf="Stretch"  HorizontalOptions="CenterAndExpand"  TextColor="Black" Keyboard="Text" />
-                <Entry x:Name="passwordEny" ReturnType="Next" MaxLength="12" IsPassword="True" Placeholder="Password" FontSize="Medium" FlexLayout.AlignSelf="Stretch"  HorizontalOptions="CenterAndExpand"  TextColor="Black" />
-                <Entry x:Name="confirmpasswordEntry" ReturnType="Next" MaxLength="12" IsPassword="True" Placeholder="Confirm Password" FontSize="Medium" FlexLayout.AlignSelf="Stretch"  HorizontalOptions="CenterAndExpand"  TextColor="Black" />
-                <Label x:Name="warningLabel" Text="" IsVisible="False" TextColor="Blue" FontSize="15" BackgroundColor="Transparent" FlexLayout.AlignSelf="End"/>
-                <Entry x:Name="phoneEntry" ReturnType="Done" MaxLength="10" Keyboard="Telephone" Placeholder="Phone No" FontSize="Medium" FlexLayout.AlignSelf="Stretch"  HorizontalOptions="CenterAndExpand"  TextColor="Black" >
-                 
+                <Entry x:Name="passwordEntry"
+                    ReturnType="Next"
+                    MaxLength="12"
+                    IsPassword="True"
+                    Placeholder="Password"
+                    FontSize="Medium"
+                    FlexLayout.AlignSelf="Stretch"
+                    HorizontalOptions="CenterAndExpand"
+                    TextColor="Black" >
                 </Entry>
-                <Label x:Name="phoneWarLabel" Text="" IsVisible="False" TextColor="Blue" FontSize="15" BackgroundColor="Transparent" FlexLayout.AlignSelf="End"/>
-                <Button x:Name="signUp" Clicked="SignupValidation_ButtonClicked" FontSize="Medium" TextColor="White" BorderColor="Black" BackgroundColor="#00b33c"  CornerRadius="5" FlexLayout.AlignSelf="Stretch"  HorizontalOptions="CenterAndExpand" Text="Sign Up"/>                
-                <Button TextColor="Black" BackgroundColor="Transparent" Clicked="login_ClickedEvent" Text="Login" FontSize="13" FlexLayout.AlignSelf="Start" />
+                <Entry x:Name="nameEntry"
+                    Placeholder="Full Name"
+                    ReturnType="Next"
+                    FontSize="Medium"
+                    FlexLayout.AlignSelf="Stretch"
+                    HorizontalOptions="CenterAndExpand"
+                    TextColor="Black" >
+                </Entry>
+                <Entry x:Name="birthdayEntry"
+                    Placeholder="Birthday(MM/DD/YYYY)"
+                    ReturnType="Next"
+                    FontSize="Medium"
+                    FlexLayout.AlignSelf="Stretch"
+                    HorizontalOptions="CenterAndExpand"
+                    TextColor="Black" >
+                </Entry>
+                <Entry x:Name="addressEntry"
+                    Placeholder="Address"
+                    ReturnType="Next"
+                    FontSize="Medium"
+                    FlexLayout.AlignSelf="Stretch"
+                    HorizontalOptions="CenterAndExpand"
+                    TextColor="Black" >
+                </Entry>
+                <Entry x:Name="genderEntry"
+                    Placeholder="Gender"
+                    ReturnType="Next"
+                    FontSize="Medium"
+                    FlexLayout.AlignSelf="Stretch"
+                    HorizontalOptions="CenterAndExpand"
+                    TextColor="Black" >
+                </Entry>
+                <Entry x:Name="majorEntry"
+                    Placeholder="School Major"
+                    ReturnType="Next"
+                    FontSize="Medium"
+                    FlexLayout.AlignSelf="Stretch"
+                    HorizontalOptions="CenterAndExpand"
+                    TextColor="Black" >
+                </Entry>
+                <Button x:Name="interestsPage"
+                    Clicked="interestsPage_ButtonClicked"
+                    FontSize="Medium"
+                    TextColor="White"
+                    BorderColor="Black"
+                    BackgroundColor="#OOb33c"
+                    CornerRadius="5"
+                    FlexLayout.AlignSelf="Stretch"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="interests">
+                </Button>
             </FlexLayout>
         </AbsoluteLayout>
-    </ContentPage.Content>--!>
+    </ContentPage.Content>
 </ContentPage>
+
 
