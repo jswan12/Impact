@@ -5,6 +5,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             BarBackgroundColor="Orange"
+             BarTextColor="White"
              x:Class="Impact.TabMainPage">
     <local:HomePage></local:HomePage>
     <local:MessagePage></local:MessagePage>

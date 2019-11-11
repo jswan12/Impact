@@ -23,7 +23,7 @@ namespace Impact
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new StartPage());
+            MainPage = new NavigationPage(new StartPage()) { BarBackgroundColor = Color.Orange, BarTextColor = Color.White };
 
             //MainPage = new TabMainPage();
         }

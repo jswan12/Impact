@@ -15,27 +15,37 @@ namespace Impact
         public ProfilePage()
         {
             InitializeComponent();
+            profilePage_uid.Text = "UID: " + LoginPage.currentUser.uid.ToString();
+            profilePage_email_address.Text = "Email Address: " + LoginPage.currentUser.email_address;
+            profilePage_credentials_id.Text = "Credentials ID: " + LoginPage.currentUser.credentials_id.ToString();
+            profilePage_name.Text = "Name: " + LoginPage.currentUser.name;
+            profilePage_birthday.Text = "Birthday: " + LoginPage.currentUser.birthday.ToString();
+            profilePage_city.Text = "City: " + LoginPage.currentUser.city;
+            profilePage_state.Text = "State: " + LoginPage.currentUser.state;
+            profilePage_gender.Text = "Gender: " + LoginPage.currentUser.gender;
+            profilePage_major.Text = "Major: " + LoginPage.currentUser.major;
         }
 
-        protected override async void OnAppearing()
+/*        protected override async void OnAppearing()
         {
             base.OnAppearing();
             listView.ItemsSource = await App.Database.GetUsersAsync();
-        }
+        }*/
 
         async void OnButtonClicked(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(nameEntry.Text) && !string.IsNullOrWhiteSpace(emailEntry.Text))
+            // This is for local database
+            /*if (!string.IsNullOrWhiteSpace(nameEntry.Text) && !string.IsNullOrWhiteSpace(emailEntry.Text))
             {
                 await App.Database.SaveUserAsync(new User
                 {
-                    Name = nameEntry.Text,
-                    Email = emailEntry.Text
+                    name = nameEntry.Text,
+                    email_address = emailEntry.Text
                 });
 
                 nameEntry.Text = emailEntry.Text = string.Empty;
                 listView.ItemsSource = await App.Database.GetUsersAsync();
-            }
+            }*/
         }
     }
 }

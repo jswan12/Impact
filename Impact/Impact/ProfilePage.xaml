@@ -8,7 +8,16 @@
              Title="Profile" IconImageSource="outline_account_box_black_18dp.png">
     <ContentPage.Content>
         <StackLayout Margin="20,35,20,20">
-            <Entry x:Name="nameEntry"
+            <Label x:Name="profilePage_uid"/>
+            <Label x:Name="profilePage_email_address"/>
+            <Label x:Name="profilePage_credentials_id"/>
+            <Label x:Name="profilePage_name"/>
+            <Label x:Name="profilePage_birthday"/>
+            <Label x:Name="profilePage_city"/>
+            <Label x:Name="profilePage_state"/>
+            <Label x:Name="profilePage_gender"/>
+            <Label x:Name="profilePage_major"/>
+            <!--<Entry x:Name="nameEntry"
                Placeholder="Enter name" />
             <Entry x:Name="emailEntry"
                Placeholder="Enter email" />
@@ -21,7 +30,7 @@
                               Detail="{Binding Email}" />
                     </DataTemplate>
                 </ListView.ItemTemplate>
-            </ListView>
+            </ListView>-->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

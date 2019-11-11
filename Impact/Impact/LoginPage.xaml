@@ -4,16 +4,18 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Impact.LoginPage">
+             x:Class="Impact.LoginPage"
+             x:Name="LoginPage_content">
     <ContentPage.Content>
         <StackLayout Margin="20,35,20,20">
             <Label Text="Impact" FontSize="Large" HorizontalTextAlignment="Center" VerticalTextAlignment="Start"/>
             <Entry x:Name="email_AddressEntry"
-               Placeholder="Enter Email Address" />
+               Placeholder="Enter Email Address" IsSpellCheckEnabled="False" />
             <Entry x:Name="passwordEntry"
-               Placeholder="Enter Password" />
+               Placeholder="Enter Password" IsPassword="True" />
             <Button Text="Login"
-                Clicked="OnButtonClicked" />
+                Clicked="LoginButtonClicked" />
+            <ActivityIndicator x:Name="activityIndicator" Color="Orange" VerticalOptions="Center" HorizontalOptions="Center"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

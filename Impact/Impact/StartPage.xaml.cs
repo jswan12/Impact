@@ -10,7 +10,7 @@ namespace Impact
         public StartPage()
         {
             InitializeComponent();
-            NavigationPage.SetHasNavigationBar(this.StartPage_content, true);
+            NavigationPage.SetHasNavigationBar(this.StartPage_content, false);
         }
         private async void LoginButton_Clicked(object sender, EventArgs e)
         {

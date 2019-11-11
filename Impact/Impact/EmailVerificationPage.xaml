@@ -9,24 +9,29 @@
         <StackLayout>
             <Label Text="Please confirm the verification code"
                 HorizontalOptions="CenterAndExpand"
-                   VerticalOptions="Center" 
+                VerticalOptions="Center" 
                 FontSize="25"/>
-            <Label Text="sent to user.email"
+            <Label Text="sent to"
                 HorizontalOptions="CenterAndExpand"
-                   VerticalOptions="Center"
+                VerticalOptions="Center"
                 FontSize="25"/>
+            <Label x:Name="recipientEmailLabel"
+                Text="recipientEmail@provider.com"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="Center"
+                FontSize="18"/>
             <Entry x:Name="verificationCodeEntry"
-                   HorizontalOptions="CenterAndExpand"
-                   Placeholder="Enter Code Here" 
-                   Scale="1.75" 
-                   Keyboard="Numeric" 
-                   MaxLength="6" 
-                   CharacterSpacing="4" 
-                   ClearButtonVisibility="WhileEditing"/>
+                HorizontalOptions="CenterAndExpand"
+                Placeholder="Enter Code Here" 
+                Scale="1.75" 
+                Keyboard="Numeric" 
+                MaxLength="6" 
+                CharacterSpacing="4" 
+                ClearButtonVisibility="WhileEditing"/>
             <Button Text="Submit"
-                    Clicked="SubmitButtonClicked"
-                    HorizontalOptions="Center"
-                     Scale="1.5"/>
+                Clicked="SubmitButtonClicked"
+                HorizontalOptions="Center"
+                Scale="1.5"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

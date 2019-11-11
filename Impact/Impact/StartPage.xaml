@@ -6,7 +6,6 @@
              mc:Ignorable="d"
              x:Class="Impact.StartPage"
              x:Name="StartPage_content"  
-             Title="Impact"
              BackgroundColor="Transparent" 
              NavigationPage.HasBackButton="False">    
     <ContentPage.Content>
