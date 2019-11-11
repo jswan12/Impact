@@ -338,7 +338,9 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
-Impact/Impact.Android/Impact.Android.csproj
+*Impact.Android.csproj
 Impact/.DS_Store
 .DS_Store
-Impact/Impact.Android/Impact.Android.csproj
+*Resource.designer.cs
+*Impact.iOS.csproj
+*Impact.csproj
