@@ -12,25 +12,6 @@
     <ContentPage.Content>
         <AbsoluteLayout Margin="3,0,3,3">
             <FlexLayout IsVisible="True" JustifyContent="SpaceEvenly" Direction="Column" AlignItems="Center" Margin="20,0,20,0" >
-                <Entry x:Name="emailEntry"
-                    Placeholder="Email Address"
-                    ReturnType="Next"
-                    Keyboard="Email"
-                    FontSize="Medium"
-                    FlexLayout.AlignSelf="Stretch"
-                    HorizontalOptions="CenterAndExpand"
-                    TextColor="Black" >
-                </Entry>
-                <Entry x:Name="passwordEntry"
-                    ReturnType="Next"
-                    MaxLength="12"
-                    IsPassword="True"
-                    Placeholder="Password"
-                    FontSize="Medium"
-                    FlexLayout.AlignSelf="Stretch"
-                    HorizontalOptions="CenterAndExpand"
-                    TextColor="Black" >
-                </Entry>
                 <Entry x:Name="nameEntry"
                     Placeholder="Full Name"
                     ReturnType="Next"
@@ -47,8 +28,16 @@
                     HorizontalOptions="CenterAndExpand"
                     TextColor="Black" >
                 </Entry>
-                <Entry x:Name="addressEntry"
-                    Placeholder="Address"
+                <Entry x:Name="cityEntry"
+                    Placeholder="City"
+                    ReturnType="Next"
+                    FontSize="Medium"
+                    FlexLayout.AlignSelf="Stretch"
+                    HorizontalOptions="CenterAndExpand"
+                    TextColor="Black" >
+                </Entry>
+                <Entry x:Name="stateEntry"
+                    Placeholder="State"
                     ReturnType="Next"
                     FontSize="Medium"
                     FlexLayout.AlignSelf="Stretch"
@@ -86,5 +75,3 @@
         </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>
-
-
