@@ -12,8 +12,38 @@
      <AbsoluteLayout Margin="3,0,3,3">
             <FlexLayout IsVisible="True" JustifyContent="SpaceEvenly" Direction="Column" AlignItems="Center" Margin="20,0,20,0" >
                 <Picker x:Name="interestsPicker"
-                    Title="Select an interest"
-                    TitleColor="Red">
+                    Title="Select Interest 1"
+                    TitleColor="Gray">
+                  <Picker.ItemsSource>
+                     <x:Array Type="{x:Type x:String}">
+                     <x:String>Acting or entertaining</x:String>
+                     <x:String>Communication</x:String>
+                     <x:String>Film</x:String>
+                     <x:String>Problem Solving</x:String>
+                     <x:String>Languages</x:String>
+                     <x:String>Media</x:String>
+                     <x:String>Social Justice</x:String>
+                     </x:Array>
+                  </Picker.ItemsSource>
+                </Picker>
+                <Picker x:Name="interests2Picker"
+                    Title="Select Interest 2"
+                    TitleColor="Gray">
+                  <Picker.ItemsSource>
+                     <x:Array Type="{x:Type x:String}">
+                     <x:String>Acting or entertaining</x:String>
+                     <x:String>Communication</x:String>
+                     <x:String>Film</x:String>
+                     <x:String>Problem Solving</x:String>
+                     <x:String>Languages</x:String>
+                     <x:String>Media</x:String>
+                     <x:String>Social Justice</x:String>
+                     </x:Array>
+                  </Picker.ItemsSource>
+                </Picker>
+                <Picker x:Name="interests3Picker"
+                    Title="Select Interest 3"
+                    TitleColor="Gray">
                   <Picker.ItemsSource>
                      <x:Array Type="{x:Type x:String}">
                      <x:String>Acting or entertaining</x:String>
@@ -27,8 +57,38 @@
                   </Picker.ItemsSource>
                 </Picker>
                 <Picker x:Name="hobbiesPicker"
-                    Title="Select a Hobby"
-                    TitleColor="Red">
+                    Title="Select Hobby 1"
+                    TitleColor="Gray">
+                  <Picker.ItemsSource>
+                     <x:Array Type="{x:Type x:String}">
+                     <x:String>Writing</x:String>
+                     <x:String>Cooking</x:String>
+                     <x:String>Photography</x:String>
+                     <x:String>Painting</x:String>
+                     <x:String>Video Games</x:String>
+                     <x:String>Exercising</x:String>
+                     <x:String>Chess</x:String>
+                     </x:Array>
+                  </Picker.ItemsSource>
+                </Picker>
+                <Picker x:Name="hobbies2Picker"
+                    Title="Select Hobby 2"
+                    TitleColor="Gray">
+                  <Picker.ItemsSource>
+                     <x:Array Type="{x:Type x:String}">
+                     <x:String>Writing</x:String>
+                     <x:String>Cooking</x:String>
+                     <x:String>Photography</x:String>
+                     <x:String>Painting</x:String>
+                     <x:String>Video Games</x:String>
+                     <x:String>Exercising</x:String>
+                     <x:String>Chess</x:String>
+                     </x:Array>
+                  </Picker.ItemsSource>
+                </Picker>
+                <Picker x:Name="hobbies3Picker"
+                    Title="Select Hobby 3"
+                    TitleColor="Gray">
                   <Picker.ItemsSource>
                      <x:Array Type="{x:Type x:String}">
                      <x:String>Writing</x:String>
@@ -45,7 +105,7 @@
                     Clicked="finishPage_ButtonClicked"
                     FontSize="Medium"
                     TextColor="White"
-                    BorderColor="Black"
+                    BorderColor="Orange"
                     BackgroundColor="#OOb33c"
                     CornerRadius="5"
                     FlexLayout.AlignSelf="Stretch"
