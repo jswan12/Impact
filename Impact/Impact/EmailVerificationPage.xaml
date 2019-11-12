@@ -4,34 +4,46 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Impact.EmailVerificationPage">
+             x:Class="Impact.EmailVerificationPage"
+             x:Name="EmailVerificationPage_content"  
+             Title="Impact"
+             BackgroundColor="Transparent" 
+             NavigationPage.HasBackButton="False">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Please confirm the verification code"
-                HorizontalOptions="CenterAndExpand"
-                VerticalOptions="Center" 
-                FontSize="25"/>
-            <Label Text="sent to"
-                HorizontalOptions="CenterAndExpand"
-                VerticalOptions="Center"
-                FontSize="25"/>
-            <Label x:Name="recipientEmailLabel"
-                Text="recipientEmail@provider.com"
-                HorizontalOptions="CenterAndExpand"
-                VerticalOptions="Center"
-                FontSize="18"/>
-            <Entry x:Name="verificationCodeEntry"
-                HorizontalOptions="CenterAndExpand"
-                Placeholder="Enter Code Here" 
-                Scale="1.75" 
-                Keyboard="Numeric" 
-                MaxLength="6" 
-                CharacterSpacing="4" 
-                ClearButtonVisibility="WhileEditing"/>
-            <Button Text="Submit"
-                Clicked="SubmitButtonClicked"
-                HorizontalOptions="Center"
-                Scale="1.5"/>
-        </StackLayout>
+        <AbsoluteLayout Margin="3,0,3,3">
+            <FlexLayout IsVisible="True" JustifyContent="SpaceEvenly" Direction="Column" AlignItems="Center" Margin="20,0,20,0" >
+                <Label Text="Please confirm the verification code sent to"
+                    HorizontalOptions="Center"
+                    FlexLayout.AlignSelf="Center"
+                    FontSize="Title"/>
+                <Label x:Name="recipientEmailLabel"
+                    Text="recipientEmail@provider.com"
+                    HorizontalOptions="Center"
+                    FlexLayout.AlignSelf="Center"
+                    FontSize="Medium"/>
+                <Entry x:Name="verificationCodeEntry"
+                    FlexLayout.AlignSelf="Center"
+                    HorizontalOptions="Center"
+                    Placeholder="Enter Code Here" 
+                    ReturnType="Next"
+                    FontSize="Medium"
+                    Scale="1.75" 
+                    Keyboard="Numeric" 
+                    MaxLength="6" 
+                    CharacterSpacing="4" 
+                    ClearButtonVisibility="WhileEditing"/>
+                <ActivityIndicator x:Name="activityIndicator" Color="Orange" FlexLayout.AlignSelf="Center" HorizontalOptions="CenterAndExpand"/>
+                <Button x:Name="submitButton"
+                    Text="Submit"
+                    Clicked="SubmitButtonClicked"
+                    TextColor="White"
+                    FontSize="Medium"
+                    BorderColor="Black"
+                    BackgroundColor="#OOb33c"
+                    CornerRadius="5"
+                    FlexLayout.AlignSelf="Stretch"
+                    HorizontalOptions="CenterAndExpand"/>
+            </FlexLayout>
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>
