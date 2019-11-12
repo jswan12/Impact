@@ -11,11 +11,10 @@ namespace Impact
         {
             InitializeComponent();
             NavigationPage.SetHasBackButton(this, true);
-            emailEntry.ReturnCommand = new Command(() => passwordEntry.Focus());
-            passwordEntry.ReturnCommand = new Command(() => nameEntry.Focus());
             nameEntry.ReturnCommand = new Command(() => birthdayEntry.Focus());
-            birthdayEntry.ReturnCommand = new Command(() => addressEntry.Focus());
-            addressEntry.ReturnCommand = new Command(() => genderEntry.Focus());
+            birthdayEntry.ReturnCommand = new Command(() => cityEntry.Focus());
+            cityEntry.ReturnCommand = new Command(() => stateEntry.Focus());
+            stateEntry.ReturnCommand = new Command(() => genderEntry.Focus());
             genderEntry.ReturnCommand = new Command(() => majorEntry.Focus());
             majorEntry.ReturnCommand = new Command(() => interestsPage.Focus());
         }

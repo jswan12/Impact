@@ -1,6 +1,9 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
-
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Text;
 using Xamarin.Forms;
 
 namespace Impact
@@ -11,7 +14,7 @@ namespace Impact
         {
             InitializeComponent();
             NavigationPage.SetHasBackButton(this, true);
-  
+
             var interestsList = new List<string>();
             interestsList.Add("Acting or Entertaining");
             interestsList.Add("Communication");
@@ -40,7 +43,7 @@ namespace Impact
 
         private async void finishPage_ButtonClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new TabMainPage());
+            await DisplayAlert("Not Implemented", "Does nothing for now", "OK");
         }
     }
 }

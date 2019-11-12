@@ -15,15 +15,15 @@ namespace Impact
         public ProfilePage()
         {
             InitializeComponent();
-            profilePage_uid.Text = "UID: " + LoginPage.currentUser.uid.ToString();
-            profilePage_email_address.Text = "Email Address: " + LoginPage.currentUser.email_address;
-            profilePage_credentials_id.Text = "Credentials ID: " + LoginPage.currentUser.credentials_id.ToString();
-            profilePage_name.Text = "Name: " + LoginPage.currentUser.name;
-            profilePage_birthday.Text = "Birthday: " + LoginPage.currentUser.birthday.ToString();
-            profilePage_city.Text = "City: " + LoginPage.currentUser.city;
-            profilePage_state.Text = "State: " + LoginPage.currentUser.state;
-            profilePage_gender.Text = "Gender: " + LoginPage.currentUser.gender;
-            profilePage_major.Text = "Major: " + LoginPage.currentUser.major;
+            profilePage_uid.Text = "UID: " + App.currentUser.uid.ToString();
+            profilePage_email_address.Text = "Email Address: " + App.currentUser.email_address;
+            profilePage_credentials_id.Text = "Credentials ID: " + App.currentUser.credentials_id.ToString();
+            profilePage_name.Text = "Name: " + App.currentUser.name;
+            profilePage_birthday.Text = "Birthday: " + App.currentUser.birthday.ToString();
+            profilePage_city.Text = "City: " + App.currentUser.city;
+            profilePage_state.Text = "State: " + App.currentUser.state;
+            profilePage_gender.Text = "Gender: " + App.currentUser.gender;
+            profilePage_major.Text = "Major: " + App.currentUser.major;
         }
 
 /*        protected override async void OnAppearing()
@@ -32,7 +32,7 @@ namespace Impact
             listView.ItemsSource = await App.Database.GetUsersAsync();
         }*/
 
-        async void OnButtonClicked(object sender, EventArgs e)
+        public void OnButtonClicked(object sender, EventArgs e)
         {
             // This is for local database
             /*if (!string.IsNullOrWhiteSpace(nameEntry.Text) && !string.IsNullOrWhiteSpace(emailEntry.Text))
