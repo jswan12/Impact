@@ -15,7 +15,6 @@ namespace Impact
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoginPage : ContentPage
     {
-        public static User currentUser { get; set; }
         public LoginPage()
         {
             InitializeComponent();
@@ -39,31 +38,21 @@ namespace Impact
 
                     // If the User's credentials are found in the database,
                     // we will construct a new User (our current user)
-                    if (response.StatusCode == System.Net.HttpStatusCode.Found)
+                    if (response.StatusCode == System.Net.HttpStatusCode.Found || response.StatusCode == System.Net.HttpStatusCode.PartialContent)
                     {
                         // We format the response content into "Newtonsoft Parseable JSON"
                         string responseBody = response.Content.ReadAsStringAsync().Result.Replace("\\", "").Trim(new char[1] { '"' });
 
-                        if (string.Equals(responseBody, "Email is not verified", StringComparison.OrdinalIgnoreCase))
-                            await Navigation.PushAsync(new EmailVerificationPage(email_AddressEntry.Text));
+                        // Use Newtonsoft Package to create the current User object and apply the json values to their session (Ignoring Null and Missing Values)
+                        var deserializationSettings = new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore, MissingMemberHandling = MissingMemberHandling.Ignore };
+                        App.currentUser = JsonConvert.DeserializeObject<User>(responseBody, deserializationSettings);
+                        App.currentUser.email_address = email_AddressEntry.Text;
+
+                        // Navigate to the Home Page with Tab Group
+                        if(response.StatusCode == System.Net.HttpStatusCode.PartialContent)
+                            Application.Current.MainPage = new EmailVerificationPage(App.currentUser.email_address);
                         else
-                        {
-                            // Use Newtonsoft Package to create the current User object and apply the json values to their session (Ignoring Null and Missing Values)
-                            var deserializationSettings = new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore, MissingMemberHandling = MissingMemberHandling.Ignore };
-                            currentUser = JsonConvert.DeserializeObject<User>(responseBody, deserializationSettings);
-                            currentUser.email_address = email_AddressEntry.Text;
-
-                            // Uncomment to display current user's information to the screen
-                            /*string hi = "UID: " + currentUser.uid + "\n" + "Email: " + currentUser.email_address + "\n" +
-                                        "Credentials ID: " + currentUser.credentials_id + "\n" + "Name: " + currentUser.name + "\n" +
-                                        "Birthday: " + currentUser.birthday + "\n" + "City: " + currentUser.city + "\n" +
-                                        "State: " + currentUser.state + "\n" + "Gender: " + currentUser.gender + "\n" + "Major: " + currentUser.major;
-                            await DisplayAlert("", hi, "OK");*/
-
-
-                            // Navigate to the Home Page with Tab Group
                             Application.Current.MainPage = new TabMainPage();
-                        }
                     }
                     // If the User's credentials are not found in the database,
                     // we will display an alert to the user
