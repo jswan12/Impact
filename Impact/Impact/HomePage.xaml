@@ -7,13 +7,14 @@
              x:Class="Impact.HomePage"
              Title="Home" IconImageSource="outline_house_black_18dp.png">
     <ContentPage.Content>
-        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-            <Label Text="Home Page"/>
-
-            <Button Text="Test Button"
-                HorizontalOptions="CenterAndExpand"
-                VerticalOptions="CenterAndExpand"
-                Clicked="testButton_Clicked"/>
+        <StackLayout Spacing="10" Padding="10">
+            <ListView x:Name="listHomePosts" ItemsSource="{Binding HomePosts}" HasUnevenRows="True" ItemTapped="OnItemSelected" SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ImageCell Text="{Binding posterName}" TextColor="Orange" Detail="{Binding postTitle}" DetailColor="Black" ImageSource="{Binding universityImageUrl}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

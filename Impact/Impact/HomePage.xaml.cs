@@ -12,14 +12,18 @@ namespace Impact
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class HomePage : ContentPage
     {
+        HomePagePostViewModel homePagePostvm;
         public HomePage()
         {
             InitializeComponent();
+            homePagePostvm = new HomePagePostViewModel();
+            BindingContext = homePagePostvm;
         }
 
-        private void testButton_Clicked(object sender, EventArgs e)
+        private async void OnItemSelected(Object sender, ItemTappedEventArgs e)
         {
-            DisplayAlert("Alert!", "Button was clicked!", "OK");
+            var mydetails = e.Item as HomePagePost;
+            await Navigation.PushAsync(new HomePagePostDetailPage(mydetails.universityImageUrl, mydetails.posterName, mydetails.postTitle, mydetails.postBody));
         }
     }
 }

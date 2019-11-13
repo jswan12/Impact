@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Impact.HomePagePostDetailPage">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center">
+            <Image x:Name="universityImage" HeightRequest="100" WidthRequest="100"/>
+            <Label x:Name="posterName" HorizontalTextAlignment="Center"/>
+            <Label x:Name="postTitle" HorizontalTextAlignment="Center"/>
+            <Label x:Name="postBody" Margin="20,20" FontSize="Small"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
