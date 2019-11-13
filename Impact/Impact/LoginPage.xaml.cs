@@ -52,7 +52,12 @@ namespace Impact
                         if(response.StatusCode == System.Net.HttpStatusCode.PartialContent)
                             Application.Current.MainPage = new EmailVerificationPage(App.currentUser.email_address);
                         else
-                            Application.Current.MainPage = new TabMainPage();
+                        {
+                            if (string.IsNullOrEmpty(App.currentUser.name))
+                                Application.Current.MainPage = new RegistrationPage();
+                            else
+                                Application.Current.MainPage = new TabMainPage();
+                        } 
                     }
                     // If the User's credentials are not found in the database,
                     // we will display an alert to the user

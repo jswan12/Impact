@@ -46,9 +46,10 @@ namespace Impact
                             await DisplayAlert("Success", "Email Verification Successful", "OK");
 
                             //TODO - NEED TO CHECK IF ACCOUNT REGISTRATION HAS BEEN COMPLETED
-
-
-                            Application.Current.MainPage = new TabMainPage();
+                            if (string.IsNullOrEmpty(App.currentUser.name))
+                                Application.Current.MainPage = new RegistrationPage();
+                            else
+                                Application.Current.MainPage = new TabMainPage();
                         }
                         //Couldnt Find Credentials with credentials_id provided of the current user
                         //This should never happen!!!!
