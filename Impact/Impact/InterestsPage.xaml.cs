@@ -13,7 +13,6 @@ namespace Impact
         public InterestsPage()
         {
             InitializeComponent();
-            NavigationPage.SetHasBackButton(this, true);
 
             var interestsList = new List<string>();
             interestsList.Add("Acting or Entertaining");
@@ -41,9 +40,9 @@ namespace Impact
 
         }
 
-        private async void finishPage_ButtonClicked(object sender, EventArgs e)
+        private void finishPage_ButtonClicked(object sender, EventArgs e)
         {
-            await DisplayAlert("Not Implemented", "Does nothing for now", "OK");
+            App.instance.ClearNavigationAndGoToPage(new TabMainPage());
         }
     }
 }

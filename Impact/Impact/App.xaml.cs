@@ -9,6 +9,7 @@ namespace Impact
     public partial class App : Application
     {
         public static User currentUser;
+        public static App instance;
         //public static HttpClient client = new HttpClient();
 
         static LocalDatabase database;
@@ -26,7 +27,7 @@ namespace Impact
         public App()
         {
             InitializeComponent();
-
+            instance = this;
             MainPage = new NavigationPage(new StartPage()) { BarBackgroundColor = Color.Orange, BarTextColor = Color.White };
 
             //MainPage = new TabMainPage();
@@ -45,6 +46,11 @@ namespace Impact
         protected override void OnResume()
         {
             // Handle when your app resumes
+        }
+
+        public void ClearNavigationAndGoToPage(Page page)
+        {
+            MainPage = new NavigationPage(page) { BarBackgroundColor = Color.Orange, BarTextColor = Color.White };
         }
     }
 }

@@ -105,7 +105,7 @@ namespace Impact
                         App.currentUser = JsonConvert.DeserializeObject<User>(responseBody, deserializationSettings);
 
                         //User Successfully created
-                        Application.Current.MainPage = new EmailVerificationPage(App.currentUser.email_address);
+                        App.instance.ClearNavigationAndGoToPage(new EmailVerificationPage(App.currentUser.email_address));
                     }
                     else
                         await DisplayAlert("Title", responseBody, "OK");

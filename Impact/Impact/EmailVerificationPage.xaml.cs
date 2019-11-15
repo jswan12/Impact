@@ -45,14 +45,13 @@ namespace Impact
                             // Email Set to Verified.
                             await DisplayAlert("Success", "Email Verification Successful", "OK");
 
-                            //TODO - NEED TO CHECK IF ACCOUNT REGISTRATION HAS BEEN COMPLETED
                             if (string.IsNullOrEmpty(App.currentUser.name))
-                                Application.Current.MainPage = new RegistrationPage();
+                                App.instance.ClearNavigationAndGoToPage(new RegistrationPage());
                             else
-                                Application.Current.MainPage = new TabMainPage();
+                                App.instance.ClearNavigationAndGoToPage(new TabMainPage());
                         }
                         //Couldnt Find Credentials with credentials_id provided of the current user
-                        //This should never happen!!!!
+                        //This should never happen with the database foreign key reference !!!!
                         else
                             await DisplayAlert("Error", responseBody, "OK");
                     }
