@@ -5,6 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Impact.LoginPage"
+             NavigationPage.HasNavigationBar="True"
              x:Name="LoginPage_content">
     <ContentPage.Content>
         <StackLayout Margin="20,35,20,20">
