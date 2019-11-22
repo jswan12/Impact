@@ -8,9 +8,12 @@
              BarBackgroundColor="Orange"
              BarTextColor="White"
              NavigationPage.HasNavigationBar="False"
-             x:Class="Impact.TabMainPage">
+             x:Class="Impact.TabMainPage"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.IsSwipePagingEnabled="False">
     <local:HomePage></local:HomePage>
     <local:MessagePage></local:MessagePage>
     <local:ConnectionsPage></local:ConnectionsPage>
+    <local:GroupsPage></local:GroupsPage>
     <local:ProfilePage></local:ProfilePage>
 </TabbedPage>
