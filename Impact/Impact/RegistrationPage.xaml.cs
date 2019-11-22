@@ -10,19 +10,19 @@ namespace Impact
         public RegistrationPage()
         {
             InitializeComponent();
-            NavigationPage.SetHasBackButton(this, true);
-            nameEntry.ReturnCommand = new Command(() => birthdayEntry.Focus());
-            birthdayEntry.ReturnCommand = new Command(() => cityEntry.Focus());
-            cityEntry.ReturnCommand = new Command(() => stateEntry.Focus());
-            stateEntry.ReturnCommand = new Command(() => genderEntry.Focus());
-            genderEntry.ReturnCommand = new Command(() => majorEntry.Focus());
-            majorEntry.ReturnCommand = new Command(() => interestsPage.Focus());
-        }
+			NavigationPage.SetHasBackButton(this, true);
+			nameEntry.ReturnCommand = new Command(() => birthdayEntry.Focus());
+			birthdayEntry.ReturnCommand = new Command(() => addressEntry.Focus());
+			addressEntry.ReturnCommand = new Command(() => genderEntry.Focus());
+			genderEntry.ReturnCommand = new Command(() => majorEntry.Focus());
+			majorEntry.ReturnCommand = new Command(() => interestsPage.Focus());
+		}
 
-        private async void interestsPage_ButtonClicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new InterestsPage());
-        }
-      
-    }
+		private async void interestsPage_ButtonClicked(object sender, EventArgs e)
+		{
+			await Navigation.PushAsync(new InterestsPage());
+		}
+
+	}
 }
+

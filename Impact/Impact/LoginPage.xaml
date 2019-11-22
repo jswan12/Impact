@@ -5,16 +5,27 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Impact.LoginPage"
+             NavigationPage.HasNavigationBar="True"
              x:Name="LoginPage_content">
     <ContentPage.Content>
-        <StackLayout Margin="20,35,20,20">
+        <StackLayout Margin="5,5,5,5">
             <Label Text="Impact" FontSize="Large" HorizontalTextAlignment="Center" VerticalTextAlignment="Start"/>
             <Entry x:Name="email_AddressEntry"
                Placeholder="Enter Email Address" IsSpellCheckEnabled="False" />
             <Entry x:Name="passwordEntry"
                Placeholder="Enter Password" IsPassword="True" />
-            <Button Text="Login"
-                Clicked="LoginButtonClicked" />
+            <Button x:Name="Login"
+                Clicked="LoginButtonClicked"
+                FontSize="Medium"
+                TextColor="Black"
+                Text="Login">
+            </Button>
+            <Button x:Name="forgotPassword"
+                    Clicked="forgotPassword_ButtonClicked"
+                    FontSize="Small"
+                    TextColor="Black"
+                    Text="Forgot Password">
+            </Button>
             <ActivityIndicator x:Name="activityIndicator" Color="Orange" VerticalOptions="Center" HorizontalOptions="Center"/>
         </StackLayout>
     </ContentPage.Content>

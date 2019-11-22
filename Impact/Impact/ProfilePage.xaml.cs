@@ -47,5 +47,10 @@ namespace Impact
                 listView.ItemsSource = await App.Database.GetUsersAsync();
             }*/
         }
+        private async void Settings_ButtonClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Settings());
+        }
+
     }
 }

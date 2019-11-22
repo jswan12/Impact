@@ -7,7 +7,18 @@
              x:Class="Impact.ProfilePage"
              Title="Profile" IconImageSource="outline_account_box_black_18dp.png">
     <ContentPage.Content>
-        <StackLayout Margin="20,35,20,20">
+        <StackLayout Margin="5,5,5,5">
+            <Button x:Name="settingsButton"
+                    Clicked="Settings_ButtonClicked"
+                    FontSize="Small"
+                    TextColor="White"
+                    BorderColor="Black"
+                    BackgroundColor="Gray"
+                    CornerRadius="2"
+                    FlexLayout.AlignSelf="Stretch"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="Settings">
+                </Button>
             <Label x:Name="profilePage_uid"/>
             <Label x:Name="profilePage_email_address"/>
             <Label x:Name="profilePage_credentials_id"/>

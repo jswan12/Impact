@@ -8,10 +8,10 @@
              Title="Home" IconImageSource="outline_house_black_18dp.png">
     <ContentPage.Content>
         <StackLayout Spacing="10" Padding="10">
-            <ListView x:Name="listHomePosts" ItemsSource="{Binding HomePosts}" HasUnevenRows="True" ItemTapped="OnItemSelected" SeparatorVisibility="None">
+            <ListView x:Name="listHomePosts" ItemsSource="{Binding HomePosts}" HasUnevenRows="True" ItemTapped="OnItemSelected" SeparatorVisibility="None" IsPullToRefreshEnabled="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ImageCell Text="{Binding posterName}" TextColor="Orange" Detail="{Binding postTitle}" DetailColor="Black" ImageSource="{Binding universityImageUrl}"/>
+                        <ImageCell Text="{Binding posterName}" TextColor="Orange" Detail="{Binding title}" DetailColor="Black" ImageSource="{Binding universityImageUrl}"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

@@ -18,12 +18,10 @@ namespace Impact
         public LoginPage()
         {
             InitializeComponent();
-            NavigationPage.SetHasNavigationBar(this.LoginPage_content, true);
         }
 
         private async void LoginButtonClicked(object sender, EventArgs e)
         {
-
             try
             {
                 activityIndicator.IsRunning = true;
@@ -50,13 +48,13 @@ namespace Impact
 
                         // Navigate to the Home Page with Tab Group
                         if(response.StatusCode == System.Net.HttpStatusCode.PartialContent)
-                            Application.Current.MainPage = new EmailVerificationPage(App.currentUser.email_address);
+                            App.instance.ClearNavigationAndGoToPage(new EmailVerificationPage(App.currentUser.email_address));
                         else
                         {
                             if (string.IsNullOrEmpty(App.currentUser.name))
-                                Application.Current.MainPage = new RegistrationPage();
+                                App.instance.ClearNavigationAndGoToPage(new RegistrationPage());
                             else
-                                Application.Current.MainPage = new TabMainPage();
+                                App.instance.ClearNavigationAndGoToPage(new TabMainPage());
                         } 
                     }
                     // If the User's credentials are not found in the database,
@@ -82,5 +80,11 @@ namespace Impact
                 activityIndicator.IsRunning = false;
             }
         }
+
+        private async void forgotPassword_ButtonClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new TabMainPage());
+        }
+
     }
 }
