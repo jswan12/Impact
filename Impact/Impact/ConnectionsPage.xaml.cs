@@ -12,9 +12,26 @@ namespace Impact
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ConnectionsPage : ContentPage
     {
+        ConnectionsPageUsersViewModel connectionsPageUsersvm;
         public ConnectionsPage()
         {
             InitializeComponent();
+            connectionsPageUsersvm = new ConnectionsPageUsersViewModel();
+            BindingContext = connectionsPageUsersvm;
+        }
+
+        public async void OnUserGestureRecognizerTapped(Object sender, EventArgs e)
+        {
+            var mydetails = e.ToString();
+            //string detailString = mydetails.User_Name + "\n" + mydetails.Location + "\n" + mydetails.Details;
+            await DisplayAlert("HI", mydetails, "OK");
+        }
+
+        public async void OnButtonClicked(Object sender, EventArgs e)
+        {
+            //var mydetails = e.CurrentItem as ConnectionsPageUser;
+            //string detailString = mydetails.User_Name + "\n" + mydetails.Location + "\n" + mydetails.Details;
+            await DisplayAlert("HI", "Does nothing as of now", "OK");
         }
     }
 }
