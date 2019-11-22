@@ -18,12 +18,23 @@ namespace Impact
             InitializeComponent();
             homePagePostvm = new HomePagePostViewModel();
             BindingContext = homePagePostvm;
+
+            listHomePosts.RefreshCommand = new Command(() => {
+                //Do your stuff.
+                PulledToRefresh();
+                listHomePosts.IsRefreshing = false;
+            });
         }
 
         private async void OnItemSelected(Object sender, ItemTappedEventArgs e)
         {
             var mydetails = e.Item as HomePagePost;
-            await Navigation.PushAsync(new HomePagePostDetailPage(mydetails.universityImageUrl, mydetails.posterName, mydetails.postTitle, mydetails.postBody));
+            await Navigation.PushAsync(new HomePagePostDetailPage(mydetails.universityImageUrl, mydetails.posterName, mydetails.title, mydetails.body));
+        }
+
+        private async void PulledToRefresh()
+        {
+            await DisplayAlert("Hi", "You pulled to refresh", "OK");
         }
     }
 }
