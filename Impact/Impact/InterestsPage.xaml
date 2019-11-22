@@ -8,8 +8,8 @@
              x:Name="InterestsPage_content"  
              Title="Impact"
              BackgroundColor="Transparent" 
-             NavigationPage.HasBackButton="True">
-     <AbsoluteLayout Margin="3,0,3,3">
+             NavigationPage.HasNavigationBar="False">
+    <AbsoluteLayout Margin="3,0,3,3">
             <FlexLayout IsVisible="True" JustifyContent="SpaceEvenly" Direction="Column" AlignItems="Center" Margin="20,0,20,0" >
                 <Picker x:Name="interestsPicker"
                     Title="Select Interest 1"
