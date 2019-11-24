@@ -8,7 +8,8 @@
              Title="Profile" IconImageSource="outline_account_box_black_18dp.png">
     <ContentPage.Content>
         <StackLayout Margin="5,5,5,5">
-            <Button x:Name="settingsButton"
+            <StackLayout Margin="5,5,5,5" Orientation="Horizontal">
+                <Button x:Name="settingsButton"
                     Clicked="Settings_ButtonClicked"
                     FontSize="Small"
                     TextColor="White"
@@ -19,6 +20,18 @@
                     HorizontalOptions="CenterAndExpand"
                     Text="Settings">
                 </Button>
+                <Button x:Name="logoutButton"
+                    Clicked="logout_ButtonClicked"
+                    FontSize="Small"
+                    TextColor="White"
+                    BorderColor="Black"
+                    BackgroundColor="Red"
+                    CornerRadius="2"
+                    FlexLayout.AlignSelf="Stretch"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="Logout">
+                </Button>
+            </StackLayout>
             <Label x:Name="profilePage_uid"/>
             <Label x:Name="profilePage_email_address"/>
             <Label x:Name="profilePage_credentials_id"/>

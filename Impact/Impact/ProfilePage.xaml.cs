@@ -52,5 +52,9 @@ namespace Impact
             await Navigation.PushAsync(new Settings());
         }
 
+        private void logout_ButtonClicked(object sender, EventArgs e)
+        {
+            App.instance.logoutCurrentUser();
+        }
     }
 }

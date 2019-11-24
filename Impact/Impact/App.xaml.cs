@@ -28,7 +28,7 @@ namespace Impact
         {
             InitializeComponent();
             instance = this;
-            MainPage = new NavigationPage(new StartPage()) { BarBackgroundColor = Color.Orange, BarTextColor = Color.White };
+            MainPage = new NavigationPage(new LoginPage());
             //MainPage = new NavigationPage(new Settings());
             //MainPage = new TabMainPage();
         }
@@ -51,6 +51,12 @@ namespace Impact
         public void ClearNavigationAndGoToPage(Page page)
         {
             MainPage = new NavigationPage(page) { BarBackgroundColor = Color.Orange, BarTextColor = Color.White };
+        }
+
+        public void logoutCurrentUser()
+        {
+            App.instance.ClearNavigationAndGoToPage(new LoginPage());
+            currentUser = null;
         }
     }
 }
