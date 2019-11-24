@@ -34,5 +34,11 @@
     <string>Impact</string>
     <key>XSAppIconAssets</key>
     <string>Assets.xcassets/AppIcon.appiconset</string>
+  <key>UIAppFonts</key>
+  <array>
+    <string>Typo Grotesk Black Demo.otf</string>
+    <string>Typo Grotesk Demo.otf</string>
+    <string>Typo Grotesk Thin Demo.otf</string>
+  </array>
 </dict>
 </plist>
