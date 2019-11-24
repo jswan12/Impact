@@ -5,28 +5,76 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Impact.LoginPage"
-             NavigationPage.HasNavigationBar="True"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundImageSource="blue_to_orange_gradient.jpg"
              x:Name="LoginPage_content">
-    <ContentPage.Content>
-        <StackLayout Margin="5,5,5,5">
-            <Label Text="Impact" FontSize="Large" HorizontalTextAlignment="Center" VerticalTextAlignment="Start"/>
+    <FlexLayout JustifyContent="SpaceEvenly" AlignItems="Center" Direction="Column" Margin="20,0,20,0">
+        <Image Source="ImpactLogo.png" HeightRequest="140" WidthRequest="140"/>
+        <StackLayout Spacing="25" WidthRequest="330">
+
+            <Label Text="Impact"
+                FontSize="40"
+                TextColor="White"
+                HorizontalOptions="Center"
+                VerticalOptions="Center">
+                <Label.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+                        <On Platform="iOS" Value="Typo Grotesk Demo.otf" />
+                        <On Platform="Android" Value="Typo Grotesk Demo.otf#Typo Grotesk Demo" />
+                    </OnPlatform>
+                </Label.FontFamily>
+            </Label>
+
             <Entry x:Name="email_AddressEntry"
-               Placeholder="Enter Email Address" IsSpellCheckEnabled="False" />
+                   Focused="entry_Focused"
+                   Keyboard="Email"
+                   PlaceholderColor="White"
+                   TextColor="White"
+                    Placeholder="Enter Email Address" IsSpellCheckEnabled="False" />
             <Entry x:Name="passwordEntry"
-               Placeholder="Enter Password" IsPassword="True" />
-            <Button x:Name="Login"
-                Clicked="LoginButtonClicked"
-                FontSize="Medium"
-                TextColor="Black"
-                Text="Login">
-            </Button>
-            <Button x:Name="forgotPassword"
-                    Clicked="forgotPassword_ButtonClicked"
-                    FontSize="Small"
-                    TextColor="Black"
-                    Text="Forgot Password">
-            </Button>
-            <ActivityIndicator x:Name="activityIndicator" Color="Orange" VerticalOptions="Center" HorizontalOptions="Center"/>
+                   Focused="entry_Focused"
+                   PlaceholderColor="White"
+                   TextColor="White"
+                    Placeholder="Enter Password" IsPassword="True" />
         </StackLayout>
-    </ContentPage.Content>
+        <Label Margin="0, 0, 0, 10" x:Name="errorLabel" Text="" TextColor="Orange" HorizontalOptions="Center"/>
+        <Button x:Name="Login" WidthRequest="120" CornerRadius="4" HeightRequest="45"
+                    Clicked="LoginButtonClicked"
+                    BackgroundColor="WhiteSmoke"
+                    FontSize="Medium"
+                    TextColor="#0F516C"
+                    Text="Login">
+            <Button.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="iOS" Value="Typo Grotesk Demo.otf" />
+                    <On Platform="Android" Value="Typo Grotesk Demo.otf#Typo Grotesk Demo" />
+                </OnPlatform>
+            </Button.FontFamily>
+        </Button>
+        <StackLayout Spacing="30" WidthRequest="330" Margin="20, 20, 20, 0">
+            <Label HorizontalOptions="Center" TextColor="White">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Don't have an account? "/>
+                        <Span Text="Sign Up!" FontAttributes="Bold">
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnSignUpTapped"/>
+                            </Span.GestureRecognizers>
+                        </Span>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label TextColor="White" HorizontalOptions="Center" Text="Forgot Password?">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnForgotPasswordTapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+        <!--<Button x:Name="forgotPassword"
+                        Clicked="forgotPassword_ButtonClicked"
+                        FontSize="Small"
+                        TextColor="Black"
+                        Text="Forgot Password"/>-->
+        <ActivityIndicator x:Name="activityIndicator" Color="Orange" FlexLayout.AlignSelf="Center" HorizontalOptions="CenterAndExpand"/>
+    </FlexLayout>
 </ContentPage>

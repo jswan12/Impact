@@ -22,6 +22,14 @@ namespace Impact
 
         private async void LoginButtonClicked(object sender, EventArgs e)
         {
+            if (!string.IsNullOrEmpty(email_AddressEntry.Text) && !string.IsNullOrEmpty(passwordEntry.Text))
+                await loginWithCredentialsAsync();
+            else
+                errorLabel.Text = "Email and Password can't be empty.";
+        }
+
+        private async Task loginWithCredentialsAsync()
+        {
             try
             {
                 activityIndicator.IsRunning = true;
@@ -47,7 +55,7 @@ namespace Impact
                         App.currentUser.email_address = email_AddressEntry.Text;
 
                         // Navigate to the Home Page with Tab Group
-                        if(response.StatusCode == System.Net.HttpStatusCode.PartialContent)
+                        if (response.StatusCode == System.Net.HttpStatusCode.PartialContent)
                             App.instance.ClearNavigationAndGoToPage(new EmailVerificationPage(App.currentUser.email_address));
                         else
                         {
@@ -55,16 +63,13 @@ namespace Impact
                                 App.instance.ClearNavigationAndGoToPage(new RegistrationPage());
                             else
                                 App.instance.ClearNavigationAndGoToPage(new TabMainPage());
-                        } 
+                        }
                     }
                     // If the User's credentials are not found in the database,
                     // we will display an alert to the user
+                    // In this case the response content will be a string saying "Invalid Login Credentials".
                     else
-                    {
-                        // In this case the response content will be a string saying "Invalid Login Credentials".
-                        string responseContent = response.Content.ReadAsStringAsync().Result.Replace("\\", "").Trim(new char[1] { '"' });
-                        await DisplayAlert("Invalid Login Credentials", responseContent, "OK");
-                    }
+                        errorLabel.Text = "Email or Password is incorrect.";
                 }
             }
             catch (HttpRequestException exception)
@@ -81,10 +86,23 @@ namespace Impact
             }
         }
 
-        private async void forgotPassword_ButtonClicked(object sender, EventArgs e)
+        private void entry_Focused(object sender, FocusEventArgs e)
         {
-            await Navigation.PushAsync(new TabMainPage());
+            if (!string.IsNullOrEmpty(errorLabel.Text))
+            {
+                errorLabel.Text = "";
+            }
         }
 
+        private void OnSignUpTapped(object sender, EventArgs e)
+        {
+            App.instance.ClearNavigationAndGoToPage(new RegisterCredentialsPage());
+        }
+
+        private async void OnForgotPasswordTapped(object sender, EventArgs e)
+        {
+            await DisplayAlert("Forgot Password", "Ahh you forgot your password I see...", "OK");
+            /*await Navigation.PushAsync(new TabMainPage());*/
+        }
     }
 }

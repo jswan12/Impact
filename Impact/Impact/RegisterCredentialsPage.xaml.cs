@@ -19,7 +19,6 @@ namespace Impact
         public RegisterCredentialsPage()
         {
             InitializeComponent();
-            NavigationPage.SetHasBackButton(this, true);
             passwordInfoLabel.Text = "Passwords should meet the following requirements:\n" +
                                     "\t - Be 8 to 12 characters in length\n" +
                                     "\t - Contain at least one lower case letter\n" +
@@ -119,6 +118,11 @@ namespace Impact
             {
                 activityIndicator.IsRunning = false;
             }
+        }
+
+        private void OnLoginTapped(object sender, EventArgs e)
+        {
+            App.instance.ClearNavigationAndGoToPage(new LoginPage());
         }
     }
 }
