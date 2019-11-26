@@ -30,12 +30,14 @@
                    Keyboard="Email"
                    PlaceholderColor="White"
                    TextColor="White"
-                    Placeholder="Enter Email Address" IsSpellCheckEnabled="False" />
+                   BackgroundColor="Transparent"
+                   Placeholder="Enter Email Address" IsSpellCheckEnabled="False" />
             <Entry x:Name="passwordEntry"
                    Focused="entry_Focused"
                    PlaceholderColor="White"
                    TextColor="White"
-                    Placeholder="Enter Password" IsPassword="True" />
+                   BackgroundColor="Transparent"
+                   Placeholder="Enter Password" IsPassword="True" />
         </StackLayout>
         <Label Margin="0, 0, 0, 10" x:Name="errorLabel" Text="" TextColor="Orange" HorizontalOptions="Center"/>
         <Button x:Name="Login" WidthRequest="120" CornerRadius="4" HeightRequest="45"

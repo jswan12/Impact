@@ -18,6 +18,7 @@
                    FontSize="Medium"
                    FlexLayout.AlignSelf="Stretch"
                    HorizontalOptions="CenterAndExpand"
+                   BackgroundColor="Transparent"
                    TextColor="Black" >
              </Entry>
              <Entry x:Name="birthdayEntry"
@@ -26,6 +27,7 @@
                    FontSize="Medium"
                    FlexLayout.AlignSelf="Stretch"
                    HorizontalOptions="CenterAndExpand"
+                   BackgroundColor="Transparent"
                    TextColor="Black" >
              </Entry>
              <Entry x:Name="addressEntry"
@@ -34,6 +36,7 @@
                    FontSize="Medium"
                    FlexLayout.AlignSelf="Stretch"
                    HorizontalOptions="CenterAndExpand"
+                   BackgroundColor="Transparent"
                    TextColor="Black" >
              </Entry>
              <Entry x:Name="genderEntry"
@@ -42,6 +45,7 @@
                     FontSize="Medium"
                     FlexLayout.AlignSelf="Stretch"
                     HorizontalOptions="CenterAndExpand"
+                    BackgroundColor="Transparent"
                     TextColor="Black" >
              </Entry>
              <Entry x:Name="majorEntry"
@@ -50,6 +54,7 @@
                     FontSize="Medium"
                     FlexLayout.AlignSelf="Stretch"
                     HorizontalOptions="CenterAndExpand"
+                    BackgroundColor="Transparent"
                     TextColor="Black" >
             </Entry>
             <Button x:Name="interestsPage"
