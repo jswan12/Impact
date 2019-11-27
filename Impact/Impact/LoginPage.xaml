@@ -27,6 +27,7 @@
 
             <Entry x:Name="email_AddressEntry"
                    Focused="entry_Focused"
+                   ReturnType="Next"
                    Keyboard="Email"
                    PlaceholderColor="White"
                    TextColor="White"
@@ -77,6 +78,6 @@
                         FontSize="Small"
                         TextColor="Black"
                         Text="Forgot Password"/>-->
-        <ActivityIndicator x:Name="activityIndicator" Color="Orange" FlexLayout.AlignSelf="Center" HorizontalOptions="CenterAndExpand"/>
+        <ActivityIndicator x:Name="activityIndicator" Color="WhiteSmoke" FlexLayout.AlignSelf="Center" HorizontalOptions="CenterAndExpand"/>
     </FlexLayout>
 </ContentPage>

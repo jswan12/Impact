@@ -5,15 +5,17 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Impact.InterestsPage"
-             x:Name="InterestsPage_content"  
-             Title="Impact"
-             BackgroundColor="Transparent" 
-             NavigationPage.HasNavigationBar="False">
+             x:Name="InterestsPage_content"
+             BackgroundImageSource="blue_to_orange_gradient.jpg"
+             Title="Back to Info"
+             NavigationPage.HasNavigationBar="True">
     <AbsoluteLayout Margin="3,0,3,3">
             <FlexLayout IsVisible="True" JustifyContent="SpaceEvenly" Direction="Column" AlignItems="Center" Margin="20,0,20,0" >
-                <Picker x:Name="interestsPicker"
+                <Picker x:Name="interests1Picker"
                     Title="Select Interest 1"
-                    TitleColor="Gray">
+                    TitleColor="WhiteSmoke"
+                    TextColor="White"
+                    BackgroundColor="Transparent">
                   <Picker.ItemsSource>
                      <x:Array Type="{x:Type x:String}">
                      <x:String>Acting or entertaining</x:String>
@@ -28,7 +30,9 @@
                 </Picker>
                 <Picker x:Name="interests2Picker"
                     Title="Select Interest 2"
-                    TitleColor="Gray">
+                    TitleColor="WhiteSmoke"
+                    TextColor="White"
+                    BackgroundColor="Transparent">
                   <Picker.ItemsSource>
                      <x:Array Type="{x:Type x:String}">
                      <x:String>Acting or entertaining</x:String>
@@ -43,7 +47,9 @@
                 </Picker>
                 <Picker x:Name="interests3Picker"
                     Title="Select Interest 3"
-                    TitleColor="Gray">
+                    TitleColor="WhiteSmoke"
+                    TextColor="White"
+                    BackgroundColor="Transparent">
                   <Picker.ItemsSource>
                      <x:Array Type="{x:Type x:String}">
                      <x:String>Acting or entertaining</x:String>
@@ -56,9 +62,11 @@
                      </x:Array>
                   </Picker.ItemsSource>
                 </Picker>
-                <Picker x:Name="hobbiesPicker"
+                <Picker x:Name="hobbies1Picker"
                     Title="Select Hobby 1"
-                    TitleColor="Gray">
+                    TitleColor="WhiteSmoke"
+                    TextColor="White"
+                    BackgroundColor="Transparent">
                   <Picker.ItemsSource>
                      <x:Array Type="{x:Type x:String}">
                      <x:String>Writing</x:String>
@@ -73,7 +81,9 @@
                 </Picker>
                 <Picker x:Name="hobbies2Picker"
                     Title="Select Hobby 2"
-                    TitleColor="Gray">
+                    TitleColor="WhiteSmoke"
+                    TextColor="White"
+                    BackgroundColor="Transparent">
                   <Picker.ItemsSource>
                      <x:Array Type="{x:Type x:String}">
                      <x:String>Writing</x:String>
@@ -88,7 +98,9 @@
                 </Picker>
                 <Picker x:Name="hobbies3Picker"
                     Title="Select Hobby 3"
-                    TitleColor="Gray">
+                    TitleColor="WhiteSmoke"
+                    TextColor="White"
+                    BackgroundColor="Transparent">
                   <Picker.ItemsSource>
                      <x:Array Type="{x:Type x:String}">
                      <x:String>Writing</x:String>
@@ -104,13 +116,12 @@
                 <Button x:Name="finishPage"
                     Clicked="finishPage_ButtonClicked"
                     FontSize="Medium"
-                    TextColor="White"
-                    BorderColor="Orange"
-                    BackgroundColor="#OOb33c"
+                    TextColor="#0F516C"
+                    BackgroundColor="WhiteSmoke"
                     CornerRadius="5"
                     FlexLayout.AlignSelf="Stretch"
                     HorizontalOptions="CenterAndExpand"
-                    Text="finish">
+                    Text="Finish">
                 </Button>
             </FlexLayout>
          </AbsoluteLayout>

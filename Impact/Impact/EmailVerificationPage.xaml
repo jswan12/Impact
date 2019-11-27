@@ -5,41 +5,65 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Impact.EmailVerificationPage"
-             x:Name="EmailVerificationPage_content"  
-             Title="Impact"
-             BackgroundColor="Transparent" 
-             NavigationPage.HasBackButton="False">
+             x:Name="EmailVerificationPage_content"
+             Title="Back to Change Email"
+             BackgroundImageSource="blue_to_orange_gradient.jpg">
     <ContentPage.Content>
         <AbsoluteLayout Margin="3,0,3,3">
             <FlexLayout IsVisible="True" JustifyContent="SpaceEvenly" Direction="Column" AlignItems="Center" Margin="20,0,20,0" >
-                <Label Text="Please confirm the verification code sent to"
-                    HorizontalOptions="Center"
-                    FlexLayout.AlignSelf="Center"
-                    FontSize="Title"/>
+                <StackLayout>
+                    <Label Text="Check Your Inbox!"
+                           FontSize="40"
+                           TextColor="White"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center">
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="iOS" Value="Typo Grotesk Demo.otf" />
+                                <On Platform="Android" Value="Typo Grotesk Demo.otf#Typo Grotesk Demo" />
+                            </OnPlatform>
+                        </Label.FontFamily>
+                    </Label>
+                    <Label Text="we sent an email to"
+                           FontSize="Title"
+                           TextColor="White"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center">
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="iOS" Value="Typo Grotesk Demo.otf" />
+                                <On Platform="Android" Value="Typo Grotesk Demo.otf#Typo Grotesk Demo" />
+                            </OnPlatform>
+                        </Label.FontFamily>
+                    </Label>
+                </StackLayout>
                 <Label x:Name="recipientEmailLabel"
-                    Text="recipientEmail@provider.com"
-                    HorizontalOptions="Center"
-                    FlexLayout.AlignSelf="Center"
-                    FontSize="Medium"/>
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       FontAttributes="Bold"
+                       FontSize="Large"
+                       TextColor="White"
+                       Text="recipientEmail@university.edu"/>
                 <Entry x:Name="verificationCodeEntry"
                     FlexLayout.AlignSelf="Center"
                     HorizontalOptions="Center"
-                    Placeholder="Enter Code Here" 
-                    ReturnType="Next"
+                    Placeholder="Enter Code Here"
+                    PlaceholderColor="White"
+                    BackgroundColor="Transparent"
+                    TextColor="White"
                     FontSize="Medium"
                     Scale="1.75" 
                     Keyboard="Numeric" 
                     MaxLength="6" 
                     CharacterSpacing="4" 
                     ClearButtonVisibility="WhileEditing"/>
-                <ActivityIndicator x:Name="activityIndicator" Color="Orange" FlexLayout.AlignSelf="Center" HorizontalOptions="CenterAndExpand"/>
+                <ActivityIndicator x:Name="activityIndicator" Color="WhiteSmoke" FlexLayout.AlignSelf="Center" HorizontalOptions="CenterAndExpand"/>
                 <Button x:Name="submitButton"
                     Text="Submit"
                     Clicked="SubmitButtonClicked"
-                    TextColor="White"
+                    TextColor="#0F516C"
                     FontSize="Medium"
-                    BorderColor="Black"
-                    BackgroundColor="#OOb33c"
+                    BackgroundColor="WhiteSmoke"
                     CornerRadius="5"
                     FlexLayout.AlignSelf="Stretch"
                     HorizontalOptions="CenterAndExpand"/>
