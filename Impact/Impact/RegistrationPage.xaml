@@ -5,64 +5,73 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Impact.RegistrationPage"
-             x:Name="RegistrationPage_content"  
-             Title="Impact"
-             BackgroundColor="Transparent" 
-             NavigationPage.HasBackButton="True">
+             x:Name="RegistrationPage_content"
+             BackgroundImageSource="blue_to_orange_gradient.jpg"
+             NavigationPage.HasNavigationBar="False">
    <ContentPage.Content>
       <AbsoluteLayout Margin="3,0,3,3">
          <FlexLayout IsVisible="True" JustifyContent="SpaceEvenly" Direction="Column" AlignItems="Center" Margin="20,0,20,0" >
              <Entry x:Name="nameEntry"
                    Placeholder="Full Name"
+                   PlaceholderColor="White"
                    ReturnType="Next"
                    FontSize="Medium"
                    FlexLayout.AlignSelf="Stretch"
                    HorizontalOptions="CenterAndExpand"
                    BackgroundColor="Transparent"
-                   TextColor="Black" >
+                   TextColor="White" >
              </Entry>
-             <Entry x:Name="birthdayEntry"
-                   Placeholder="Birthday(MM/DD/YYYY)"
-                   ReturnType="Next"
-                   FontSize="Medium"
-                   FlexLayout.AlignSelf="Stretch"
-                   HorizontalOptions="CenterAndExpand"
-                   BackgroundColor="Transparent"
-                   TextColor="Black" >
-             </Entry>
-             <Entry x:Name="addressEntry"
-                   Placeholder="Address"
-                   ReturnType="Next"
-                   FontSize="Medium"
-                   FlexLayout.AlignSelf="Stretch"
-                   HorizontalOptions="CenterAndExpand"
-                   BackgroundColor="Transparent"
-                   TextColor="Black" >
-             </Entry>
-             <Entry x:Name="genderEntry"
-                    Placeholder="Gender"
+                <DatePicker x:Name="birthdayDatePicker"
+                    FontSize="Medium"
+                    FlexLayout.AlignSelf="Stretch"
+                    HorizontalOptions="CenterAndExpand"
+                    BackgroundColor="Transparent"
+                    TextColor="White">
+                </DatePicker>
+                <Entry x:Name="cityEntry"
+                    Placeholder="City"
+                    PlaceholderColor="White"
                     ReturnType="Next"
                     FontSize="Medium"
                     FlexLayout.AlignSelf="Stretch"
                     HorizontalOptions="CenterAndExpand"
                     BackgroundColor="Transparent"
-                    TextColor="Black" >
+                    TextColor="White" >
+                </Entry>
+                <Entry x:Name="stateEntry"
+                   Placeholder="State"
+                   PlaceholderColor="White"
+                   ReturnType="Next"
+                   FontSize="Medium"
+                   FlexLayout.AlignSelf="Stretch"
+                   HorizontalOptions="CenterAndExpand"
+                   BackgroundColor="Transparent"
+                   TextColor="White" >
+                </Entry>
+                <Entry x:Name="genderEntry"
+                    Placeholder="Gender"
+                    PlaceholderColor="White"
+                    ReturnType="Next"
+                    FontSize="Medium"
+                    FlexLayout.AlignSelf="Stretch"
+                    HorizontalOptions="CenterAndExpand"
+                    BackgroundColor="Transparent"
+                    TextColor="White" >
              </Entry>
              <Entry x:Name="majorEntry"
                     Placeholder="School Major"
-                    ReturnType="Next"
+                    PlaceholderColor="White"
                     FontSize="Medium"
                     FlexLayout.AlignSelf="Stretch"
                     HorizontalOptions="CenterAndExpand"
                     BackgroundColor="Transparent"
-                    TextColor="Black" >
+                    TextColor="White" >
             </Entry>
             <Button x:Name="interestsPage"
                     Clicked="interestsPage_ButtonClicked"
                     FontSize="Medium"
-                    TextColor="White"
-                    BorderColor="Black"
-                    BackgroundColor="#OOb33c"
+                    TextColor="#0F516C"
+                    BackgroundColor="WhiteSmoke"
                     CornerRadius="5"
                     FlexLayout.AlignSelf="Stretch"
                     HorizontalOptions="CenterAndExpand"

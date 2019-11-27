@@ -41,6 +41,13 @@
             <Label x:Name="profilePage_state"/>
             <Label x:Name="profilePage_gender"/>
             <Label x:Name="profilePage_major"/>
+            <Label x:Name="profilePage_userType"/>
+            <Label x:Name="profilePage_interest1"/>
+            <Label x:Name="profilePage_interest2"/>
+            <Label x:Name="profilePage_interest3"/>
+            <Label x:Name="profilePage_hobby1"/>
+            <Label x:Name="profilePage_hobby2"/>
+            <Label x:Name="profilePage_hobby3"/>
             <!--<Entry x:Name="nameEntry"
                Placeholder="Enter name" />
             <Entry x:Name="emailEntry"
