@@ -7,14 +7,16 @@
              x:Class="Impact.HomePage"
              Title="Home" IconImageSource="outline_house_black_18dp.png">
     <ContentPage.Content>
-        <StackLayout Spacing="10" Padding="10">
-            <ListView x:Name="listHomePosts" ItemsSource="{Binding HomePosts}" HasUnevenRows="True" ItemTapped="OnItemSelected" SeparatorVisibility="None" IsPullToRefreshEnabled="True">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ImageCell Text="{Binding posterName}" TextColor="Orange" Detail="{Binding title}" DetailColor="Black" ImageSource="{Binding universityImageUrl}"/>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
+        <FlexLayout Margin="20,10,20,10">
+            <StackLayout Spacing="10">
+                <ListView x:Name="listHomePosts" ItemsSource="{Binding HomePosts}" HasUnevenRows="True" ItemTapped="OnItemSelected" SeparatorVisibility="None" IsPullToRefreshEnabled="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ImageCell Text="{Binding posterName}" TextColor="Orange" Detail="{Binding title}" DetailColor="Black" ImageSource="{Binding universityImageUrl}"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </FlexLayout>
     </ContentPage.Content>
 </ContentPage>
