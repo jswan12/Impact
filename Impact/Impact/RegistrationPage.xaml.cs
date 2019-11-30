@@ -11,7 +11,8 @@ namespace Impact
         {
             InitializeComponent();
             birthdayDatePicker.Date = new DateTime(1998, DateTime.Today.Month, DateTime.Today.Day);
-            nameEntry.ReturnCommand = new Command(() => birthdayDatePicker.Focus());
+            nameEntry.ReturnCommand = new Command(() => imageUrlEntry.Focus());
+            imageUrlEntry.ReturnCommand = new Command(() => birthdayDatePicker.Focus());
 			cityEntry.ReturnCommand = new Command(() => stateEntry.Focus());
             stateEntry.ReturnCommand = new Command(() => genderEntry.Focus());
             genderEntry.ReturnCommand = new Command(() => majorEntry.Focus());
@@ -19,7 +20,7 @@ namespace Impact
 
 		private async void interestsPage_ButtonClicked(object sender, EventArgs e)
 		{
-			await Navigation.PushAsync(new InterestsPage(new User{ uid = App.currentUser.uid, email_address = App.currentUser.email_address,  credentials_id = App.currentUser.credentials_id, name = nameEntry.Text, birthday = birthdayDatePicker.Date, city = cityEntry.Text, state = stateEntry.Text, gender = genderEntry.Text, major = majorEntry.Text, user_type = App.currentUser.user_type}));
+			await Navigation.PushAsync(new InterestsPage(new User{ uid = App.currentUser.uid, email_address = App.currentUser.email_address,  credentials_id = App.currentUser.credentials_id, name = nameEntry.Text, birthday = birthdayDatePicker.Date, city = cityEntry.Text, state = stateEntry.Text, gender = genderEntry.Text, major = majorEntry.Text, user_type = App.currentUser.user_type, imageUrl = imageUrlEntry.Text}));
         }
 
 	}

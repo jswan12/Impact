@@ -8,6 +8,7 @@ namespace Impact
     public class User
     {
         public int uid { get; set; }
+        public string imageUrl { get; set; }
         public string email_address { get; set; }
         public int credentials_id { get; set; }
         public string name { get; set; }

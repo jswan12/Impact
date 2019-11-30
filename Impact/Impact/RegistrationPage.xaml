@@ -21,6 +21,16 @@
                    BackgroundColor="Transparent"
                    TextColor="White" >
              </Entry>
+                <Entry x:Name="imageUrlEntry"
+                   Placeholder="Image Url"
+                   PlaceholderColor="White"
+                   ReturnType="Next"
+                   FontSize="Medium"
+                   FlexLayout.AlignSelf="Stretch"
+                   HorizontalOptions="CenterAndExpand"
+                   BackgroundColor="Transparent"
+                   TextColor="White" >
+                </Entry>
                 <DatePicker x:Name="birthdayDatePicker"
                     FontSize="Medium"
                     FlexLayout.AlignSelf="Stretch"

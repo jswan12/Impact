@@ -29,7 +29,7 @@ namespace Impact
         private async void OnItemSelected(Object sender, ItemTappedEventArgs e)
         {
             var mydetails = e.Item as HomePagePost;
-            await Navigation.PushAsync(new HomePagePostDetailPage(mydetails.universityImageUrl, mydetails.posterName, mydetails.title, mydetails.body));
+            await Navigation.PushAsync(new HomePagePostDetailPage(mydetails.imageUrl, mydetails.posterName, mydetails.title, mydetails.body));
         }
 
         private async void PulledToRefresh()
