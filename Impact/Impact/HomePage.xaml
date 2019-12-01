@@ -8,11 +8,18 @@
              Title="Home" IconImageSource="outline_house_black_18dp.png">
     <ContentPage.Content>
         <FlexLayout Margin="20,10,20,10">
-            <StackLayout Spacing="10">
-                <ListView x:Name="listHomePosts" ItemsSource="{Binding HomePosts}" HasUnevenRows="True" ItemTapped="OnItemSelected" SeparatorVisibility="None" IsPullToRefreshEnabled="True">
+            <StackLayout Spacing="10" BackgroundColor="Transparent">
+                <StackLayout x:Name="newPostStack" BackgroundColor="Transparent">
+                    <Image Source="post_add.png" HeightRequest="30" WidthRequest="30" Margin="325,0,0,0">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="NewPost_ButtonClicked"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </StackLayout>
+                <ListView  BackgroundColor="Transparent" x:Name="listHomePosts" HasUnevenRows="True" ItemTapped="OnItemSelected" SeparatorVisibility="None" IsPullToRefreshEnabled="True">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <ImageCell Text="{Binding posterName}" TextColor="Orange" Detail="{Binding title}" DetailColor="Black" ImageSource="{Binding universityImageUrl}"/>
+                            <ImageCell x:Name="userImage" Text="{Binding posterName}" TextColor="Orange" Detail="{Binding title}" DetailColor="Black" ImageSource="{Binding imageUrl}"/>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>

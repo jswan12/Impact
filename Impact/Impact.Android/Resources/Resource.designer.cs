@@ -6475,16 +6475,19 @@ namespace Impact.Droid
 			public const int outline_swap_calls_black_18dp = 2131165508;
 			
 			// aapt resource value: 0x7F070145
-			public const int settings_icon = 2131165509;
+			public const int post_add = 2131165509;
 			
 			// aapt resource value: 0x7F070146
-			public const int settings_icon_white = 2131165510;
+			public const int settings_icon = 2131165510;
 			
 			// aapt resource value: 0x7F070147
-			public const int tooltip_frame_dark = 2131165511;
+			public const int settings_icon_white = 2131165511;
 			
 			// aapt resource value: 0x7F070148
-			public const int tooltip_frame_light = 2131165512;
+			public const int tooltip_frame_dark = 2131165512;
+			
+			// aapt resource value: 0x7F070149
+			public const int tooltip_frame_light = 2131165513;
 			
 			static Drawable()
 			{

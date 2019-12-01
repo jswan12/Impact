@@ -138,4 +138,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\edit_icon_white.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\post_add.png" />
+  </ItemGroup>
 </Project>

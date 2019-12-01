@@ -25,7 +25,7 @@
                     </Image>
                 </StackLayout>
                 <FlexLayout JustifyContent="SpaceEvenly" AlignItems="Center" Direction="Column" Margin="0,0,0,10">
-                    <image:CircleImage x:Name="profilePage_myImage" Aspect="AspectFill" WidthRequest="170" HeightRequest="170"/>
+                    <image:CircleImage x:Name="profilePage_myImage" Aspect="AspectFill" WidthRequest="170" HeightRequest="170" Margin="0,0,0,10"/>
                     <Label x:Name="profilePage_name" Text="Name"
                     FontSize="30"
                     TextColor="White">
