@@ -11,7 +11,6 @@
     <FlexLayout JustifyContent="SpaceEvenly" AlignItems="Center" Direction="Column" Margin="20,0,20,0">
         <Image Source="ImpactLogo.png" HeightRequest="140" WidthRequest="140"/>
         <StackLayout Spacing="25" WidthRequest="330">
-
             <Label Text="Impact"
                 FontSize="40"
                 TextColor="White"
@@ -27,6 +26,7 @@
 
             <Entry x:Name="email_AddressEntry"
                    Focused="entry_Focused"
+                   ReturnType="Next"
                    Keyboard="Email"
                    PlaceholderColor="White"
                    TextColor="White"
@@ -72,11 +72,6 @@
                 </Label.GestureRecognizers>
             </Label>
         </StackLayout>
-        <!--<Button x:Name="forgotPassword"
-                        Clicked="forgotPassword_ButtonClicked"
-                        FontSize="Small"
-                        TextColor="Black"
-                        Text="Forgot Password"/>-->
-        <ActivityIndicator x:Name="activityIndicator" Color="Orange" FlexLayout.AlignSelf="Center" HorizontalOptions="CenterAndExpand"/>
+        <ActivityIndicator x:Name="activityIndicator" Color="WhiteSmoke" FlexLayout.AlignSelf="Center" HorizontalOptions="CenterAndExpand"/>
     </FlexLayout>
 </ContentPage>

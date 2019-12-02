@@ -24,10 +24,9 @@ namespace Impact
                                     "\t - Contain at least one lower case letter\n" +
                                     "\t - Contain at least one upper case letter\n" +
                                     "\t - Contain at least one numeric value (0 - 9)\n" +
-                                    "\t - Contain at least one of these special characters! $ *( ) _ -";
+                                    "\t - Contain at least one special character!";// $ *( ) _ -";
             emailEntry.ReturnCommand = new Command(() => passwordEntry.Focus());
             passwordEntry.ReturnCommand = new Command(() => confirmPasswordEntry.Focus());
-            confirmPasswordEntry.ReturnCommand = new Command(() => createAccountButton.Focus());
         }
 
         private async void createAccount_ButtonClicked(object sender, EventArgs e)
@@ -95,7 +94,7 @@ namespace Impact
                 {
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                     var newLoginCredentials_JSON = new StringContent(JsonConvert.SerializeObject(new { Email_Address = emailEntry.Text, Password = passwordEntry.Text }), Encoding.UTF8, "application/json");
-                    HttpResponseMessage response = await client.PostAsync(new Uri("https://asp-impact.azurewebsites.net/api/Login"), newLoginCredentials_JSON);
+                    HttpResponseMessage response = await client.PostAsync(new Uri("https://asp-impact.azurewebsites.net/api/Login?user_type=" + 0), newLoginCredentials_JSON);
                     string responseBody = response.Content.ReadAsStringAsync().Result.Replace("\\", "").Trim(new char[1] { '"' });
                     
                     if (response.StatusCode == System.Net.HttpStatusCode.Accepted)
@@ -104,10 +103,10 @@ namespace Impact
                         App.currentUser = JsonConvert.DeserializeObject<User>(responseBody, deserializationSettings);
 
                         //User Successfully created
-                        App.instance.ClearNavigationAndGoToPage(new EmailVerificationPage(App.currentUser.email_address));
+                        await Navigation.PushAsync(new EmailVerificationPage(App.currentUser.email_address, true));
                     }
                     else
-                        await DisplayAlert("Title", responseBody, "OK");
+                        await DisplayAlert("Error", responseBody, "OK");
                 }
             }
             catch (Exception exception)

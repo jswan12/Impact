@@ -16,13 +16,16 @@ namespace Impact
     public partial class EmailVerificationPage : ContentPage
     {
         EmailSender email;
-        public EmailVerificationPage(string recipientEmail)
+        public EmailVerificationPage(string recipientEmail, bool hasBackButton = false)
         {
             InitializeComponent();
+            if (hasBackButton)
+                NavigationPage.SetHasNavigationBar(this, true);
+            else
+                NavigationPage.SetHasNavigationBar(this, false);
             email = new EmailSender(recipientEmail, true);
             recipientEmailLabel.Text = recipientEmail;
-            NavigationPage.SetHasBackButton(this, true);
-            verificationCodeEntry.ReturnCommand = new Command(() => submitButton.Focus());
+            verificationCodeEntry.Focus();
         }
 
         private async void SubmitButtonClicked(object sender, EventArgs e)
