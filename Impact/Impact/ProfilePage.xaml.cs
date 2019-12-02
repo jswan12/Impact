@@ -18,7 +18,7 @@ namespace Impact
             profilePage_myImage.Source = App.currentUser.imageUrl;
             profilePage_email_address.Text = "Email Address: " + App.currentUser.email_address;
             profilePage_name.Text = App.currentUser.name;
-            profilePage_bio.Text = App.currentUser.bio;
+            profilePage_bio.Text = string.IsNullOrEmpty(App.currentUser.bio) ? "You havn't added a bio yet." : App.currentUser.bio;
             profilePage_age.Text = (DateTime.Today.Year - App.currentUser.birthday.Year).ToString();
             profilePage_birthday.Text = "Birth date: " + App.currentUser.birthday.Date.ToShortDateString();
             profilePage_city.Text = App.currentUser.city;
