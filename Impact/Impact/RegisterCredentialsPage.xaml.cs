@@ -28,7 +28,9 @@ namespace Impact
                                     "\t - Contain at least one special character!";// $ *( ) _ -";
             emailEntry.ReturnCommand = new Command(() => passwordEntry.Focus());
             passwordEntry.ReturnCommand = new Command(() => confirmPasswordEntry.Focus());
-        }
+            user_type = 1;
+
+    }
 
         private async void createAccount_ButtonClicked(object sender, EventArgs e)
         {

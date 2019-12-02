@@ -18,7 +18,6 @@ namespace Impact
         public LoginPage()
         {
             InitializeComponent();
-            email_AddressEntry.ReturnCommand = new Command(() => passwordEntry.Focus());
         }
 
         private async void LoginButtonClicked(object sender, EventArgs e)
@@ -53,6 +52,7 @@ namespace Impact
                         // Use Newtonsoft Package to create the current User object and apply the json values to their session (Ignoring Null and Missing Values)
                         var deserializationSettings = new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore, MissingMemberHandling = MissingMemberHandling.Ignore };
                         App.currentUser = JsonConvert.DeserializeObject<User>(responseBody, deserializationSettings);
+                        App.currentUser.email_address = email_AddressEntry.Text;
 
                         // Navigate to the Home Page with Tab Group
                         if (response.StatusCode == System.Net.HttpStatusCode.PartialContent)

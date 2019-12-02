@@ -5,27 +5,52 @@
             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
             mc:Ignorable="d"
             x:Class="Impact.ConnectionsPage"
-            BackgroundImageSource="blue_to_orange_gradient.jpg"
             Title="Connections" IconImageSource="outline_swap_calls_black_18dp.png">
     <ContentPage.Content>
-        <FlexLayout AlignItems="Center" Direction="Column" Margin="20,20,20,20">
-            <StackLayout>
-                <!--Button Margin Is Temporary, remove after adding the list view-->
-                <Button x:Name="viewMentorsButton" WidthRequest="240" CornerRadius="4" HeightRequest="45"
-                    Clicked="viewMentorsButtonClicked"
-                    Margin="0,450,0,0"
-                    BackgroundColor="WhiteSmoke"
-                    FontSize="Medium"
-                    TextColor="#0F516C"
-                    Text="View Recommended Mentors">
-                    <Button.FontFamily>
-                        <OnPlatform x:TypeArguments="x:String">
-                            <On Platform="iOS" Value="Typo Grotesk Demo.otf" />
-                            <On Platform="Android" Value="Typo Grotesk Demo.otf#Typo Grotesk Demo" />
-                        </OnPlatform>
-                    </Button.FontFamily>
-                </Button>
-            </StackLayout>
-        </FlexLayout>
+        <StackLayout>
+            <Label Text="Meet Your Recommended Mentors"
+                               FontAttributes="Bold"
+                               FontSize="Large"
+                               HorizontalOptions="Center" Margin="0,50,0,0"/>
+            <CarouselView ItemsSource="{Binding UserModels}" PeekAreaInsets="150">
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <Frame HasShadow="True"
+                       BorderColor="DarkGray"
+                       CornerRadius="5"
+                       Margin="20"
+                       HeightRequest="300"
+                       HorizontalOptions="Center"
+                       VerticalOptions="CenterAndExpand">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnUserGestureRecognizerTapped"/>
+                            </Frame.GestureRecognizers>
+                            <StackLayout>
+                                <Label Text="{Binding User_Name}"
+                               FontAttributes="Bold"
+                               FontSize="Large"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center" />
+                                <Image Source="{Binding ImageUrl}"
+                               Aspect="AspectFill"
+                               HeightRequest="150"
+                               WidthRequest="150"
+                               HorizontalOptions="Center" />
+                                <Label Text="{Binding Location}"
+                               HorizontalOptions="Center" />
+                                <Label Text="{Binding Details}"
+                               FontAttributes="Italic"
+                               HorizontalOptions="Center"
+                               MaxLines="5"
+                               LineBreakMode="TailTruncation" />
+                                    <Button Text="Send Request" BackgroundColor="DodgerBlue" Clicked="OnButtonClicked"/>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
