@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Rg.Plugins.Popup.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,7 +20,7 @@ namespace Impact
 
         private async void viewMentorsButtonClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new MatchesPage());
+            await PopupNavigation.PushAsync(new MatchesPage());
         }
     }
 }

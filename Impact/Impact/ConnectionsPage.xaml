@@ -11,7 +11,7 @@
         <FlexLayout AlignItems="Center" Direction="Column" Margin="20,20,20,20">
             <StackLayout>
                 <!--Button Margin Is Temporary, remove after adding the list view-->
-                <Button x:Name="viewMentorsButton" WidthRequest="240" CornerRadius="4" HeightRequest="45"
+                <Button x:Name="viewMentorsButton" WidthRequest="330" CornerRadius="4" HeightRequest="45"
                     Clicked="viewMentorsButtonClicked"
                     Margin="0,450,0,0"
                     BackgroundColor="WhiteSmoke"
