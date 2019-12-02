@@ -17,9 +17,9 @@ namespace Impact
             InitializeComponent();
         }
 
-        private void mainGroup1_ButtonClicked(object sender, EventArgs e)
+        private async void mainGroup1_ButtonClicked(object sender, EventArgs e)
         {
-            App.instance.ClearNavigationAndGoToPage(new MainGroup());
+            await Navigation.PushAsync(new MainGroup());
         }
 
         async private void mainGroup2_ButtonClicked(object sender, EventArgs e)
