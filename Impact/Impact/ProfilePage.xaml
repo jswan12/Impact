@@ -3,129 +3,45 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:image="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
              mc:Ignorable="d"
              x:Class="Impact.ProfilePage"
-             BackgroundImageSource="blue_to_orange_gradient.jpg"
              Title="Profile" IconImageSource="outline_account_box_black_18dp.png">
     <ContentPage.Content>
-        <ScrollView>
-            <StackLayout Margin="20,20,20,20" Orientation="Vertical" BackgroundColor="Transparent">
-               
-                <StackLayout Orientation="Horizontal" Spacing="310">
-                    <Image Source="edit_icon_white.png" HeightRequest="30" WidthRequest="30">
-                        <Image.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="Edit_ButtonClicked"/>
-                        </Image.GestureRecognizers>
-                    </Image>
-                    <Image Source="settings_icon_white.png" HeightRequest="30" WidthRequest="30">
-                        <Image.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="Settings_ButtonClicked"/>
-                        </Image.GestureRecognizers>
-                    </Image>
-                </StackLayout>
-                <FlexLayout JustifyContent="SpaceEvenly" AlignItems="Center" Direction="Column" Margin="0,0,0,10">
-                    <image:CircleImage x:Name="profilePage_myImage" Aspect="AspectFill" WidthRequest="170" HeightRequest="170" Margin="0,0,0,10"/>
-                    <Label x:Name="profilePage_name" Text="Name"
-                    FontSize="30"
-                    TextColor="White">
-                        <Label.FontFamily>
-                            <OnPlatform x:TypeArguments="x:String">
-                                <On Platform="iOS" Value="Typo Grotesk Demo.otf" />
-                                <On Platform="Android" Value="Typo Grotesk Demo.otf#Typo Grotesk Demo" />
-                            </OnPlatform>
-                        </Label.FontFamily>
-                    </Label>
-                    <Label TextColor="White">
-                        <Label.FormattedText>
-                            <FormattedString>
-                                <Span x:Name="profilePage_userType" Text="User Type" FontAttributes="Italic"/>
-                                <Span Text=", "/>
-                                <Span x:Name="profilePage_major" Text="Major" FontAttributes="Italic"/>
-                            </FormattedString>
-                        </Label.FormattedText>
-                        <Label.FontFamily>
-                            <OnPlatform x:TypeArguments="x:String">
-                                <On Platform="iOS" Value="Typo Grotesk Thin Demo.otf" />
-                                <On Platform="Android" Value="Typo Grotesk Thin Demo.otf#Typo Grotesk Demo" />
-                            </OnPlatform>
-                        </Label.FontFamily>
-                    </Label>
-                </FlexLayout>
-                <Frame BackgroundColor="WhiteSmoke" CornerRadius="10" HasShadow="True">
-                    <StackLayout Spacing="20">
-                        <StackLayout x:Name="BioStack" WidthRequest="330" Orientation="Vertical" BackgroundColor="Transparent">
-                            <Label Text="Bio" FontAttributes="Bold" FontSize="20" TextColor="#0F516C">
-                                <Label.FontFamily>
-                                    <OnPlatform x:TypeArguments="x:String">
-                                        <On Platform="iOS" Value="Typo Grotesk Black Demo.otf" />
-                                        <On Platform="Android" Value="Typo Grotesk Black Demo.otf#Typo Grotesk Demo" />
-                                    </OnPlatform>
-                                </Label.FontFamily>
-                            </Label>
-                            <BoxView WidthRequest="1" HeightRequest=".1" BackgroundColor="Black"/>
-                            <Label x:Name="profilePage_bio" Text="The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog." LineBreakMode="WordWrap"/>
-                        </StackLayout>
-                        <StackLayout x:Name="AboutStack" WidthRequest="330" Orientation="Vertical" BackgroundColor="Transparent">
-                            <Label Text="About" FontAttributes="Bold" FontSize="20" TextColor="#0F516C">
-                                <Label.FontFamily>
-                                    <OnPlatform x:TypeArguments="x:String">
-                                        <On Platform="iOS" Value="Typo Grotesk Black Demo.otf" />
-                                        <On Platform="Android" Value="Typo Grotesk Black Demo.otf#Typo Grotesk Demo" />
-                                    </OnPlatform>
-                                </Label.FontFamily>
-                            </Label>
-                            <BoxView WidthRequest="1" HeightRequest=".1" BackgroundColor="Black"/>
-                            <Label>
-                                <Label.FormattedText>
-                                    <FormattedString>
-                                        <Span x:Name="profilePage_gender" Text="Gender"/>
-                                        <Span Text=", "/>
-                                        <Span x:Name="profilePage_age" Text="Age"/>
-                                    </FormattedString>
-                                </Label.FormattedText>
-                            </Label>
-                            <Label x:Name="profilePage_birthday" Text="Birthday"/>
-                            <Label>
-                                <Label.FormattedText>
-                                    <FormattedString>
-                                        <Span x:Name="profilePage_city" Text="City"/>
-                                        <Span Text=", "/>
-                                        <Span x:Name="profilePage_state" Text="State"/>
-                                    </FormattedString>
-                                </Label.FormattedText>
-                            </Label>
-                            <Label x:Name="profilePage_email_address" Text="Email Address"/>
-                        </StackLayout>
-
-                        <StackLayout x:Name="InterestAndHobbiesStack" BackgroundColor="Transparent" Orientation="Vertical" WidthRequest="330">
-                            <Label Text="Interests / Hobbies" FontAttributes="Bold" FontSize="20" TextColor="#0F516C">
-                                <Label.FontFamily>
-                                    <OnPlatform x:TypeArguments="x:String">
-                                        <On Platform="iOS" Value="Typo Grotesk Black Demo.otf" />
-                                        <On Platform="Android" Value="Typo Grotesk Black Demo.otf#Typo Grotesk Demo" />
-                                    </OnPlatform>
-                                </Label.FontFamily>
-                            </Label>
-                            <BoxView WidthRequest="1" HeightRequest=".1" BackgroundColor="Black"/>
-                            <StackLayout Orientation="Horizontal"  WidthRequest="330" BackgroundColor="Transparent">
-                                <StackLayout Orientation="Vertical" BackgroundColor="Transparent" HorizontalOptions="CenterAndExpand">
-                                    <Label x:Name="profilePage_interest1" Text="Interest1"/>
-                                    <Label x:Name="profilePage_interest2" Text="Interest2"/>
-                                    <Label x:Name="profilePage_interest3" Text="Interest3"/>
-                                </StackLayout>
-                                <StackLayout Orientation="Vertical" BackgroundColor="Transparent" HorizontalOptions="CenterAndExpand">
-                                    <Label x:Name="profilePage_hobby1" Text="Hobby1"/>
-                                    <Label x:Name="profilePage_hobby2" Text="Hobby2"/>
-                                    <Label x:Name="profilePage_hobby3" Text="Hobby3"/>
-                                </StackLayout>
-                            </StackLayout>
-                        </StackLayout>
-                    </StackLayout>
-                </Frame>
+        <StackLayout Margin="5,5,5,5">
+            <StackLayout Margin="5,5,5,5" Orientation="Horizontal">
+                <Button x:Name="settingsButton"
+                    Clicked="Settings_ButtonClicked"
+                    FontSize="Small"
+                    TextColor="White"
+                    BorderColor="Black"
+                    BackgroundColor="Gray"
+                    CornerRadius="2"
+                    FlexLayout.AlignSelf="Stretch"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="Settings">
+                </Button>
+                <Button x:Name="logoutButton"
+                    Clicked="logout_ButtonClicked"
+                    FontSize="Small"
+                    TextColor="White"
+                    BorderColor="Black"
+                    BackgroundColor="Red"
+                    CornerRadius="2"
+                    FlexLayout.AlignSelf="Stretch"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="Logout">
+                </Button>
             </StackLayout>
-        </ScrollView>
-        <!--<Entry x:Name="nameEntry"
+            <Label x:Name="profilePage_uid"/>
+            <Label x:Name="profilePage_email_address"/>
+            <Label x:Name="profilePage_credentials_id"/>
+            <Label x:Name="profilePage_name"/>
+            <Label x:Name="profilePage_birthday"/>
+            <Label x:Name="profilePage_city"/>
+            <Label x:Name="profilePage_state"/>
+            <Label x:Name="profilePage_gender"/>
+            <Label x:Name="profilePage_major"/>
+            <!--<Entry x:Name="nameEntry"
                Placeholder="Enter name" />
             <Entry x:Name="emailEntry"
                Placeholder="Enter email" />
@@ -139,9 +55,6 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>-->
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
-
-
-
-

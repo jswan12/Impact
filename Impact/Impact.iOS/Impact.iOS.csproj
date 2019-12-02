@@ -121,21 +121,20 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="sqlite-net-pcl">
-      <Version>1.7.302-beta</Version>
+      <Version>1.6.292</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.Forms" Version="4.4.0.991210-pre2" />
+    <PackageReference Include="Xamarin.Forms" Version="4.3.0.947036" />
     <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\Impact\Impact.csproj">
-      <Project>{463AB45D-0163-457C-8441-77A388ED90F5}</Project>
+      <Project>{EE5C6406-5913-4D7E-860F-6E93EA3B9224}</Project>
       <Name>Impact</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\outline_chat_black_18dp.png" />
-    <BundleResource Include="Resources\blue_to_orange_gradient.jpg" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\outline_house_black_18dp.png" />

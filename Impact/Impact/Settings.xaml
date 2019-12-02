@@ -4,81 +4,47 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-       x:Class="Impact.Settings"
-       >
-    <StackLayout>
-        <Label Text="Settings"
-               FontSize="Large"
-               FontAttributes="Bold"
-               HorizontalOptions="Center" >
-            <Label.FontFamily>
-                <OnPlatform x:TypeArguments="x:String">
-                    <On Platform="iOS" Value="Typo Grotesk Demo.otf" />
-                    <On Platform="Android" Value="Typo Grotesk Demo.otf#Typo Grotesk Demo" />
-                </OnPlatform>
-            </Label.FontFamily>
-            </Label>
-        <Button x:Name="LegalPolicies"
-                Text= "Legal and Policies"
-                FontSize="Medium"
-               VerticalOptions="CenterAndExpand"
-               HorizontalOptions="Center"
-                Pressed="LegalPressed">
-            <Button.FontFamily>
-                <OnPlatform x:TypeArguments="x:String">
-                    <On Platform="iOS" Value="Typo Grotesk Demo.otf" />
-                    <On Platform="Android" Value="Typo Grotesk Demo.otf#Typo Grotesk Demo" />
-                </OnPlatform>
-            </Button.FontFamily>
-            </Button>
-        <Button x:Name="Report"
-                Text= "Legal and Policies"
-                FontSize="Medium"
-               VerticalOptions="CenterAndExpand"
-               HorizontalOptions="Center"
-                Pressed="ReportPressed">
-            <Button.FontFamily>
-                <OnPlatform x:TypeArguments="x:String">
-                    <On Platform="iOS" Value="Typo Grotesk Demo.otf" />
-                    <On Platform="Android" Value="Typo Grotesk Demo.otf#Typo Grotesk Demo" />
-                </OnPlatform>
-            </Button.FontFamily>
-            </Button>
-        <Button x:Name="ChangePassword"
-             Text="Change Password"
-                FontSize= "Medium"
-               VerticalOptions="CenterAndExpand"
-               HorizontalOptions="Center"
-                BackgroundColor="PaleVioletRed"
-               Pressed="LogoutPressed">
-             <Button.FontFamily>
-                <OnPlatform x:TypeArguments="x:String">
-                    <On Platform="iOS" Value="Typo Grotesk Demo.otf" />
-                    <On Platform="Android" Value="Typo Grotesk Demo.otf#Typo Grotesk Demo" />
-                </OnPlatform>
-            </Button.FontFamily>
-            
-        </Button>
-         <Button x:Name="Logout"
-                Text="Logout"
-                FontSize="Medium"
-               VerticalOptions="CenterAndExpand"
-               HorizontalOptions="Center"
-               Pressed="ChangePasswordPressed">
-             <Button.FontFamily>
-                <OnPlatform x:TypeArguments="x:String">
-                    <On Platform="iOS" Value="Typo Grotesk Demo.otf" />
-                    <On Platform="Android" Value="Typo Grotesk Demo.otf#Typo Grotesk Demo" />
-                </OnPlatform>
-            </Button.FontFamily>
-            </Button>
-
-    </StackLayout>
-       
-
-
-        
-    
-    </ContentPage>
-
-<!---->
+             x:Class="Impact.Settings"
+             x:Name="Settings_content"  
+             Title="Impact"
+             BackgroundColor="Transparent" 
+             NavigationPage.HasBackButton="True">
+  <ContentPage.Content>
+     <AbsoluteLayout Margin="3,3,3,3">
+         <FlexLayout IsVisible="True" JustifyContent="SpaceEvenly" Direction="Column" AlignItems="Center" Margin="5,5,5,5" >
+            <Entry x:Name="changePassword"
+                    ReturnType="Next"
+                    MaxLength="12"
+                    IsPassword="True"
+                    Placeholder="Change Password"
+                    FontSize="Medium"
+                    FlexLayout.AlignSelf="Stretch"
+                    HorizontalOptions="CenterAndExpand"
+                    TextColor="Black" >
+            </Entry>
+            <Entry x:Name="confirmChangePassword"
+                    ReturnType="Next"
+                    MaxLength="12"
+                    IsPassword="True"
+                    Placeholder="Confirm Password"
+                    FontSize="Medium"
+                    FlexLayout.AlignSelf="Stretch"
+                    HorizontalOptions="CenterAndExpand"
+                    TextColor="Black" >
+            </Entry>
+            <ActivityIndicator x:Name="activityIndicator" Color="Orange" FlexLayout.AlignSelf="Center" HorizontalOptions="CenterAndExpand"/>
+            <Button x:Name="submitPasswordChange"
+                    Clicked="submitPasswordChange_ButtonClicked"
+                    FontSize="Medium"
+                    TextColor="White"
+                    BorderColor="Black"
+                    BackgroundColor="#OOb33c"
+                    CornerRadius="5"
+                    FlexLayout.AlignSelf="Stretch"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="Submit Password">
+                </Button>
+         </FlexLayout>
+     </AbsoluteLayout>
+  </ContentPage.Content>
+</ContentPage>

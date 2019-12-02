@@ -16,23 +16,20 @@ namespace Impact
     public partial class EmailVerificationPage : ContentPage
     {
         EmailSender email;
-        public EmailVerificationPage(string recipientEmail, bool hasBackButton = false)
+        public EmailVerificationPage(string recipientEmail)
         {
             InitializeComponent();
-            if (hasBackButton)
-                NavigationPage.SetHasNavigationBar(this, true);
-            else
-                NavigationPage.SetHasNavigationBar(this, false);
             email = new EmailSender(recipientEmail, true);
             recipientEmailLabel.Text = recipientEmail;
-            verificationCodeEntry.Focus();
+            NavigationPage.SetHasBackButton(this, true);
+            verificationCodeEntry.ReturnCommand = new Command(() => submitButton.Focus());
         }
 
         private async void SubmitButtonClicked(object sender, EventArgs e)
         {
             /*If the user input and generated verification code match
               then verify user's account and send to the homescreen.*/
-            if (!string.IsNullOrWhiteSpace(verificationCodeEntry.Text) && string.Equals(email.getVerificationCode(), verificationCodeEntry.Text))
+            if(!string.IsNullOrWhiteSpace(verificationCodeEntry.Text) && string.Equals(email.getVerificationCode(), verificationCodeEntry.Text))
             {
                 email = null;
                 await updateUsersVerificationStatus();

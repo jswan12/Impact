@@ -16,7 +16,6 @@ namespace Impact
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RegisterCredentialsPage : ContentPage
     {
-        public int user_type; 
         public RegisterCredentialsPage()
         {
             InitializeComponent();
@@ -25,12 +24,11 @@ namespace Impact
                                     "\t - Contain at least one lower case letter\n" +
                                     "\t - Contain at least one upper case letter\n" +
                                     "\t - Contain at least one numeric value (0 - 9)\n" +
-                                    "\t - Contain at least one special character!";// $ *( ) _ -";
+                                    "\t - Contain at least one of these special characters! $ *( ) _ -";
             emailEntry.ReturnCommand = new Command(() => passwordEntry.Focus());
             passwordEntry.ReturnCommand = new Command(() => confirmPasswordEntry.Focus());
-            user_type = 1;
-
-    }
+            confirmPasswordEntry.ReturnCommand = new Command(() => createAccountButton.Focus());
+        }
 
         private async void createAccount_ButtonClicked(object sender, EventArgs e)
         {
@@ -87,7 +85,7 @@ namespace Impact
                 errorMessage += "- Password should contain at least one of these special characters! $ *( ) _ -\n";
             return errorMessage;
         }
-
+        
         private async Task createLoginCredentialsAsync()
         {
             try
@@ -97,19 +95,19 @@ namespace Impact
                 {
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                     var newLoginCredentials_JSON = new StringContent(JsonConvert.SerializeObject(new { Email_Address = emailEntry.Text, Password = passwordEntry.Text }), Encoding.UTF8, "application/json");
-                    HttpResponseMessage response = await client.PostAsync(new Uri("https://asp-impact.azurewebsites.net/api/Login?user_type=" + 0), newLoginCredentials_JSON);
+                    HttpResponseMessage response = await client.PostAsync(new Uri("https://asp-impact.azurewebsites.net/api/Login"), newLoginCredentials_JSON);
                     string responseBody = response.Content.ReadAsStringAsync().Result.Replace("\\", "").Trim(new char[1] { '"' });
-
+                    
                     if (response.StatusCode == System.Net.HttpStatusCode.Accepted)
                     {
                         var deserializationSettings = new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore, MissingMemberHandling = MissingMemberHandling.Ignore };
                         App.currentUser = JsonConvert.DeserializeObject<User>(responseBody, deserializationSettings);
 
                         //User Successfully created
-                        await Navigation.PushAsync(new EmailVerificationPage(App.currentUser.email_address, true));
+                        App.instance.ClearNavigationAndGoToPage(new EmailVerificationPage(App.currentUser.email_address));
                     }
                     else
-                        await DisplayAlert("Error", responseBody, "OK");
+                        await DisplayAlert("Title", responseBody, "OK");
                 }
             }
             catch (Exception exception)
@@ -125,20 +123,6 @@ namespace Impact
         private void OnLoginTapped(object sender, EventArgs e)
         {
             App.instance.ClearNavigationAndGoToPage(new LoginPage());
-        }
-        private void OnCheckBoxCheckedChanged(object sender, EventArgs e)
-        {
-            if(user_type == 2)
-            {
-                user_type = 1;
-            }
-            else
-            {
-                user_type = 2; 
-            }
-                
-           
-            
         }
     }
 }
