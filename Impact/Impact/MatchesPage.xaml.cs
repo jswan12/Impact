@@ -60,21 +60,12 @@ namespace Impact
             }*/
         }
 
-        public async void OnUserGestureRecognizerTapped(Object sender, EventArgs e)
-        {
-            var mydetails = e.ToString();
-            //string detailString = mydetails.User_Name + "\n" + mydetails.Location + "\n" + mydetails.Details;
-            await DisplayAlert("HI", mydetails, "OK");
-        }
-
         public async void OnButtonClicked(Object sender, EventArgs e)
         {
-            //var mydetails = e.CurrentItem as ConnectionsPageUser;
-            //string detailString = mydetails.User_Name + "\n" + mydetails.Location + "\n" + mydetails.Details;
-            await DisplayAlert("HI", "Does nothing as of now", "OK");
+            await DisplayAlert("Request Sent!", "Your request has been sent to the user.", "OK");
         }
 
-        private async void Exit(object sender, EventArgs e)
+        private async void Close(object sender, EventArgs e)
         {
             await PopupNavigation.PopAsync();
         }

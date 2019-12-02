@@ -7,7 +7,7 @@
              xmlns:image="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
             xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
             mc:Ignorable="d"
-    CloseWhenBackgroundIsClicked="True"
+            CloseWhenBackgroundIsClicked="False"
              x:Class="Impact.MatchesPage"
              Title="Back to Connections" >
     <pages:PopupPage.Animation>
@@ -23,14 +23,20 @@
             ScaleOut="0.8" />
     </pages:PopupPage.Animation>
     <StackLayout BackgroundColor="Transparent" Margin="20,20,20,20">
-        <CarouselView x:Name="mentorListView" Margin="0,65,0,0">
+        <Label Text="Swipe Left To View Other Mentors" FontSize="20" BackgroundColor="WhiteSmoke" HorizontalOptions="Center" VerticalOptions="Center" TextColor="#0F516C" FontAttributes="Bold" Margin="0,0,0,15" Padding="15">
+            <Label.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="iOS" Value="Typo Grotesk Black Demo.otf" />
+                    <On Platform="Android" Value="Typo Grotesk Black Demo.otf#Typo Grotesk Demo" />
+                </OnPlatform>
+            </Label.FontFamily>
+        </Label>
+        <CarouselView x:Name="mentorListView" Margin="0,30,0,0">
             <CarouselView.ItemTemplate>
                 <DataTemplate>
                     <StackLayout Padding="24" Margin="20,0,20,0" HorizontalOptions="Center" VerticalOptions="Center" Orientation="Vertical" BackgroundColor="Transparent">
                         <Frame BackgroundColor="WhiteSmoke" CornerRadius="10" HasShadow="True" HorizontalOptions="Center" VerticalOptions="Center">
-                            <Frame.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="OnUserGestureRecognizerTapped"/>
-                            </Frame.GestureRecognizers>
+                            
                             <StackLayout BackgroundColor="Transparent" WidthRequest="330">
                                 <image:CircleImage Source="{Binding ImageUrl}" Aspect="AspectFit" HeightRequest="120" WidthRequest="120" HorizontalOptions="Center" BackgroundColor="Transparent" Margin="0,20,0,0"/>
 
@@ -42,7 +48,7 @@
                         VerticalOptions="Center" />
 
                                 <Label Text="{Binding Location}" HorizontalOptions="Center" FontAttributes="Italic" TextColor="#0F516C"/>
-                                <BoxView WidthRequest="1" HeightRequest=".02" BackgroundColor="Black" Margin="0,10,0,10"/>
+                                <BoxView WidthRequest="1" HeightRequest=".3" BackgroundColor="Black" Margin="0,10,0,10"/>
                                 <Label Text="{Binding Details}"
                         HorizontalOptions="Center"
                         Margin="10,0,10,20"
@@ -61,5 +67,13 @@
                 </DataTemplate>
             </CarouselView.ItemTemplate>
         </CarouselView>
+        <Button Text="Close" FontSize="Large" BackgroundColor="WhiteSmoke" CornerRadius="4" BorderColor="Crimson" BorderWidth="1" Clicked="Close" TextColor="Crimson" WidthRequest="300">
+            <Button.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="iOS" Value="Typo Grotesk Demo.otf" />
+                    <On Platform="Android" Value="Typo Grotesk Demo.otf#Typo Grotesk Demo" />
+                </OnPlatform>
+            </Button.FontFamily>
+        </Button>
     </StackLayout>
 </pages:PopupPage>

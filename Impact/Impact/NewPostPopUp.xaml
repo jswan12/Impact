@@ -73,7 +73,7 @@
             Text="Post"
             BorderColor="#0F516C"
             BorderWidth="1"
-            WidthRequest="159">
+            WidthRequest="145">
                 <Button.FontFamily>
                     <OnPlatform x:TypeArguments="x:String">
                         <On Platform="iOS" Value="Typo Grotesk Demo.otf" />
@@ -90,7 +90,7 @@
             Text="Cancel"
             BorderColor="Crimson"
             BorderWidth="1"
-            WidthRequest="159"
+            WidthRequest="145"
             TextColor="Crimson">
                 <Button.FontFamily>
                     <OnPlatform x:TypeArguments="x:String">

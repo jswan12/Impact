@@ -67,13 +67,7 @@ namespace Impact
         }
         private async void Settings_ButtonClicked(object sender, EventArgs e)
         {
-            await DisplayAlert("Icon Clicked", "You clicked settings", "OK");
-            //await Navigation.PushAsync(new Settings());
-        }
-
-        private void logout_ButtonClicked(object sender, EventArgs e)
-        {
-            App.instance.logoutCurrentUser();
+            await Navigation.PushAsync(new Settings());
         }
 
         private async void Edit_ButtonClicked(object sender, EventArgs e)
