@@ -11,7 +11,6 @@
     <FlexLayout JustifyContent="SpaceEvenly" AlignItems="Center" Direction="Column" Margin="20,0,20,0">
         <Image Source="ImpactLogo.png" HeightRequest="140" WidthRequest="140"/>
         <StackLayout Spacing="25" WidthRequest="330">
-
             <Label Text="Impact"
                 FontSize="40"
                 TextColor="White"
@@ -27,15 +26,18 @@
 
             <Entry x:Name="email_AddressEntry"
                    Focused="entry_Focused"
+                   ReturnType="Next"
                    Keyboard="Email"
                    PlaceholderColor="White"
                    TextColor="White"
-                    Placeholder="Enter Email Address" IsSpellCheckEnabled="False" />
+                   BackgroundColor="Transparent"
+                   Placeholder="Enter Email Address" IsSpellCheckEnabled="False" />
             <Entry x:Name="passwordEntry"
                    Focused="entry_Focused"
                    PlaceholderColor="White"
                    TextColor="White"
-                    Placeholder="Enter Password" IsPassword="True" />
+                   BackgroundColor="Transparent"
+                   Placeholder="Enter Password" IsPassword="True" />
         </StackLayout>
         <Label Margin="0, 0, 0, 10" x:Name="errorLabel" Text="" TextColor="Orange" HorizontalOptions="Center"/>
         <Button x:Name="Login" WidthRequest="120" CornerRadius="4" HeightRequest="45"
@@ -70,11 +72,6 @@
                 </Label.GestureRecognizers>
             </Label>
         </StackLayout>
-        <!--<Button x:Name="forgotPassword"
-                        Clicked="forgotPassword_ButtonClicked"
-                        FontSize="Small"
-                        TextColor="Black"
-                        Text="Forgot Password"/>-->
-        <ActivityIndicator x:Name="activityIndicator" Color="Orange" FlexLayout.AlignSelf="Center" HorizontalOptions="CenterAndExpand"/>
+        <ActivityIndicator x:Name="activityIndicator" Color="WhiteSmoke" FlexLayout.AlignSelf="Center" HorizontalOptions="CenterAndExpand"/>
     </FlexLayout>
 </ContentPage>
