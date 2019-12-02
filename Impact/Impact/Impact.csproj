@@ -18,6 +18,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="ChangePassword.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Update="TabMainPage.xaml.cs">
       <DependentUpon>TabMainPage.xaml</DependentUpon>
     </Compile>

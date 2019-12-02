@@ -16,6 +16,8 @@ namespace Impact
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RegisterCredentialsPage : ContentPage
     {
+        
+
         public RegisterCredentialsPage()
         {
             InitializeComponent();
@@ -123,6 +125,11 @@ namespace Impact
         private void OnLoginTapped(object sender, EventArgs e)
         {
             App.instance.ClearNavigationAndGoToPage(new LoginPage());
+        }
+        private async void OnCheckChanged(object sender, EventArgs e)
+        {
+            await DisplayAlert("Mentor", "By pressing this button, you are choosing" +
+                " to become a mentor, is correct?", "Yes, I want to become a mentor"); 
         }
     }
 }
