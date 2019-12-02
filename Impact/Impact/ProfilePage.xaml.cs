@@ -28,18 +28,17 @@ namespace Impact
             profilePage_userType.Text = determineUserType(App.currentUser.user_type);
             profilePage_interest1.Text = App.currentUser.interest1;
             profilePage_interest2.Text = App.currentUser.interest2;
-            profilePage_interest3.Text = App.currentUser.interest3;
+            profilePage_interest3.Text =  App.currentUser.interest3;
             profilePage_hobby1.Text = App.currentUser.hobby1;
             profilePage_hobby2.Text = App.currentUser.hobby2;
             profilePage_hobby3.Text = App.currentUser.hobby3;
         }
 
-        /*        protected override async void OnAppearing()
-				{
-					base.OnAppearing();
-					listView.ItemsSource = await App.Database.GetUsersAsync();
-				}*/
-
+/*        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            listView.ItemsSource = await App.Database.GetUsersAsync();
+        }*/
 
         public void OnButtonClicked(object sender, EventArgs e)
         {
@@ -56,14 +55,30 @@ namespace Impact
                 listView.ItemsSource = await App.Database.GetUsersAsync();
             }*/
         }
+
+        private string determineUserType(int userType)
+        {
+            if (userType == -1)
+                return "Administration";
+            else if (userType == 0)
+                return "Student";
+            else
+                return "Mentor";
+        }
         private async void Settings_ButtonClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Settings());
+            await DisplayAlert("Icon Clicked", "You clicked settings", "OK");
+            //await Navigation.PushAsync(new Settings());
         }
 
         private void logout_ButtonClicked(object sender, EventArgs e)
         {
             App.instance.logoutCurrentUser();
+        }
+
+        private async void Edit_ButtonClicked(object sender, EventArgs e)
+        {
+            await DisplayAlert("Icon Clicked", "You clicked edit", "OK");
         }
     }
 }
