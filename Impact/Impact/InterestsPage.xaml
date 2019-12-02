@@ -13,13 +13,13 @@
             <FlexLayout IsVisible="True" JustifyContent="SpaceEvenly" Direction="Column" AlignItems="Center" Margin="20,0,20,0" >
                 <Label Text="Academic Interests:"
                     FontSize="Title"
-                     TextColor="Black"
+                     TextColor="Orange"
                      HorizontalOptions="Start"
                      VerticalOptions="Start">
                      <Label.FontFamily>
                              <OnPlatform x:TypeArguments="x:String">
-                            <On Platform="iOS" Value="Typo Grotesk Demo.otf" />
-                            <On Platform="Android" Value="Typo Grotesk Demo.otf#Typo Grotesk Demo" />
+                            <On Platform="iOS" Value="Typo Grotesk Black Demo.otf" />
+                            <On Platform="Android" Value="Typo Grotesk Black Demo.otf#Typo Grotesk Demo" />
                         </OnPlatform>
                     </Label.FontFamily>
                 </Label>
@@ -76,13 +76,13 @@
                 </Picker>
                 <Label Text="Hobbies:"
                     FontSize="Title"
-                     TextColor="Black"
+                     TextColor="#0F516C"
                      HorizontalOptions="Start"
                      VerticalOptions="Start">
                      <Label.FontFamily>
                              <OnPlatform x:TypeArguments="x:String">
-                            <On Platform="iOS" Value="Typo Grotesk Demo.otf" />
-                            <On Platform="Android" Value="Typo Grotesk Demo.otf#Typo Grotesk Demo" />
+                            <On Platform="iOS" Value="Typo Grotesk Black Demo.otf" />
+                            <On Platform="Android" Value="Typo Grotesk Black Demo.otf#Typo Grotesk Demo" />
                         </OnPlatform>
                     </Label.FontFamily>
                 </Label>

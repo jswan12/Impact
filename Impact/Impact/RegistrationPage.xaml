@@ -12,7 +12,7 @@
       <AbsoluteLayout Margin="3,0,3,3">
          <FlexLayout IsVisible="True" JustifyContent="SpaceEvenly" Direction="Column" AlignItems="Center" Margin="20,0,20,0" >
              <Entry x:Name="nameEntry"
-                   Placeholder="Full Name"
+                   Placeholder="Enter Full Name"
                    PlaceholderColor="White"
                    ReturnType="Next"
                    FontSize="Medium"
@@ -22,7 +22,7 @@
                    TextColor="White" >
              </Entry>
                 <Entry x:Name="imageUrlEntry"
-                   Placeholder="Image Url"
+                   Placeholder="Paste Image Url (Leave Blank for Default Image)"
                    PlaceholderColor="White"
                    ReturnType="Next"
                    FontSize="Medium"
@@ -39,7 +39,7 @@
                     TextColor="White">
                 </DatePicker>
                 <Entry x:Name="cityEntry"
-                    Placeholder="City"
+                    Placeholder="Enter City"
                     PlaceholderColor="White"
                     ReturnType="Next"
                     FontSize="Medium"
@@ -48,40 +48,32 @@
                     BackgroundColor="Transparent"
                     TextColor="White" >
                 </Entry>
-                <Entry x:Name="stateEntry"
-                   Placeholder="State"
-                   PlaceholderColor="White"
-                   ReturnType="Next"
-                   FontSize="Medium"
-                   FlexLayout.AlignSelf="Stretch"
-                   HorizontalOptions="CenterAndExpand"
-                   BackgroundColor="Transparent"
-                   TextColor="White" >
-                </Entry>
-                <Entry x:Name="genderEntry"
-                    Placeholder="Gender"
-                    PlaceholderColor="White"
-                    FontSize="Medium"
-                    FlexLayout.AlignSelf="Stretch"
-                    HorizontalOptions="CenterAndExpand"
-                    BackgroundColor="Transparent"
-                    TextColor="White" >
-                </Entry>
+                <Picker x:Name="statePicker"
+                        FontSize="Medium"
+                        FlexLayout.AlignSelf="Stretch"
+                        HorizontalOptions="CenterAndExpand"
+                        BackgroundColor="Transparent"
+                        TextColor="White"
+                        Title="Select State"
+                        TitleColor="WhiteSmoke">
+                </Picker>
+                <Picker x:Name="genderPicker"
+                        FontSize="Medium"
+                        FlexLayout.AlignSelf="Stretch"
+                        HorizontalOptions="CenterAndExpand"
+                        BackgroundColor="Transparent"
+                        TextColor="White"
+                        Title="Select Gender"
+                        TitleColor="WhiteSmoke">
+                </Picker>
                 <Picker x:Name="majorPicker"
-                    Title="Select Major"
-                    TitleColor="Gray">
-                    <Picker.ItemsSource>
-                        <x:Array Type="{x:Type x:String}">
-                            <x:String>Astronomy</x:String>
-                            <x:String>Biology</x:String>
-                            <x:String>Chemistry</x:String>
-                            <x:String>Computer Science</x:String>
-                            <x:String>Engineering</x:String>
-                            <x:String>Earth Sciences</x:String>
-                            <x:String>Health Sciences</x:String>
-                            <x:String>Information Technology</x:String>
-                        </x:Array>
-                    </Picker.ItemsSource>
+                        FontSize="Medium"
+                        FlexLayout.AlignSelf="Stretch"
+                        HorizontalOptions="CenterAndExpand"
+                        BackgroundColor="Transparent"
+                        TextColor="White"
+                        Title="Select Major"
+                        TitleColor="WhiteSmoke">
                 </Picker>
                 <Button x:Name="interestsPage"
                     Clicked="interestsPage_ButtonClicked"
