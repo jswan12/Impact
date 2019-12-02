@@ -7,6 +7,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using Rg.Plugins.Popup.Services;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -63,17 +64,12 @@ namespace Impact
         private async void OnItemSelected(Object sender, ItemTappedEventArgs e)
         {
             var mydetails = e.Item as HomePagePost;
-            await Navigation.PushAsync(new HomePagePostDetailPage(mydetails.imageUrl, mydetails.posterName, mydetails.title, mydetails.body));
-        }
-
-        private async void PulledToRefresh()
-        {
-            await DisplayAlert("Hi", "You pulled to refresh", "OK");
+            await PopupNavigation.PushAsync(new HomePagePostDetailPage(mydetails.imageUrl, mydetails.posterName, mydetails.title, mydetails.body));
         }
 
         private async void NewPost_ButtonClicked(object sender, EventArgs e)
         {
-            await DisplayAlert("Hi", "You want to make a new post", "OK");
+            await PopupNavigation.PushAsync(new NewPostPopUp());
         }
     }
 }

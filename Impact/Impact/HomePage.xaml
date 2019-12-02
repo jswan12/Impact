@@ -5,6 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Impact.HomePage"
+             BackgroundColor="White"
              Title="Home" IconImageSource="outline_house_black_18dp.png">
     <ContentPage.Content>
         <FlexLayout Margin="20,10,20,10">
@@ -16,10 +17,10 @@
                         </Image.GestureRecognizers>
                     </Image>
                 </StackLayout>
-                <ListView  BackgroundColor="Transparent" x:Name="listHomePosts" HasUnevenRows="True" ItemTapped="OnItemSelected" SeparatorVisibility="None" IsPullToRefreshEnabled="True">
+                <ListView  x:Name="listHomePosts" HasUnevenRows="True" ItemTapped="OnItemSelected" SeparatorVisibility="None" IsPullToRefreshEnabled="True" Margin="0,0,0,10">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <ImageCell x:Name="userImage" Text="{Binding posterName}" TextColor="Orange" Detail="{Binding title}" DetailColor="Black" ImageSource="{Binding imageUrl}"/>
+                            <ImageCell x:Name="userImage" Text="{Binding posterName}" TextColor="#0F516C" Detail="{Binding title}" DetailColor="Black" ImageSource="{Binding imageUrl}"/>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
