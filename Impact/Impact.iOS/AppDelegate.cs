@@ -24,7 +24,6 @@ namespace Impact.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             Forms.SetFlags("CarouselView_Experimental");
-            Rg.Plugins.Popup.Popup.Init();
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
 

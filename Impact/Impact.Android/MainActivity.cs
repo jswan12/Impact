@@ -20,7 +20,6 @@ namespace Impact.Droid
 
             base.OnCreate(savedInstanceState);
             Forms.SetFlags("CarouselView_Experimental");
-            Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());

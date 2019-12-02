@@ -5,7 +5,6 @@
             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
             mc:Ignorable="d"
             x:Class="Impact.ConnectionsPage"
-            BackgroundImageSource="blue_to_orange_gradient.jpg"
             Title="Connections" IconImageSource="outline_swap_calls_black_18dp.png">
     <ContentPage.Content>
         <FlexLayout AlignItems="Center" Direction="Column" Margin="20,20,20,20">

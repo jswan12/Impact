@@ -13,12 +13,15 @@ namespace Impact
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ConnectionsPage : ContentPage
     {
+        ConnectionsPageUsersViewModel connectionsPageUsersvm;
         public ConnectionsPage()
         {
             InitializeComponent();
+            connectionsPageUsersvm = new ConnectionsPageUsersViewModel();
+            BindingContext = connectionsPageUsersvm;
         }
 
-        private async void viewMentorsButtonClicked(object sender, EventArgs e)
+        public async void OnUserGestureRecognizerTapped(Object sender, EventArgs e)
         {
             await PopupNavigation.PushAsync(new MatchesPage());
         }
