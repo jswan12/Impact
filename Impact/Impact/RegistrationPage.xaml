@@ -52,6 +52,7 @@
                     HorizontalOptions="CenterAndExpand"
                     TextColor="Black" >
             </Entry>
+
             <Button x:Name="interestsPage"
                     Clicked="interestsPage_ButtonClicked"
                     FontSize="Medium"
