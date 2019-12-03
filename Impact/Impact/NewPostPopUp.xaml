@@ -24,7 +24,7 @@
     <StackLayout Padding="24" WidthRequest="330" Margin="20,20,20,20" HorizontalOptions="Center" VerticalOptions="Center" Orientation="Vertical" BackgroundColor="Transparent">
         <Frame BackgroundColor="WhiteSmoke" CornerRadius="10" HasShadow="True">
             <StackLayout>
-                <Label x:Name="newPostPopUp_Title" Text="Create a New Post" FontAttributes="Bold" HorizontalOptions="Center" FontSize="30" TextColor="#0F516C">
+                <Label x:Name="newPostPopUp_Title" Text="Create a New Post" FontAttributes="Bold" HorizontalOptions="Center" FontSize="25" TextColor="#0F516C">
                     <Label.FontFamily>
                         <OnPlatform x:TypeArguments="x:String">
                             <On Platform="iOS" Value="Typo Grotesk Demo.otf" />
@@ -32,7 +32,7 @@
                         </OnPlatform>
                     </Label.FontFamily>
                 </Label>
-                <BoxView WidthRequest="1" HeightRequest="1.2" BackgroundColor="Gray" Margin="0,0,0,20"/>
+                <BoxView WidthRequest="1" HeightRequest=".3" BackgroundColor="Gray" Margin="0,0,0,20"/>
 
                 <StackLayout Spacing="0">
                     <Entry
@@ -73,7 +73,7 @@
             Text="Post"
             BorderColor="#0F516C"
             BorderWidth="1"
-            WidthRequest="145">
+            WidthRequest="142">
                 <Button.FontFamily>
                     <OnPlatform x:TypeArguments="x:String">
                         <On Platform="iOS" Value="Typo Grotesk Demo.otf" />
@@ -90,7 +90,7 @@
             Text="Cancel"
             BorderColor="Crimson"
             BorderWidth="1"
-            WidthRequest="145"
+            WidthRequest="142"
             TextColor="Crimson">
                 <Button.FontFamily>
                     <OnPlatform x:TypeArguments="x:String">

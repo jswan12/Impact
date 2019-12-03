@@ -28,17 +28,17 @@ namespace Impact
             profilePage_userType.Text = determineUserType(App.currentUser.user_type);
             profilePage_interest1.Text = App.currentUser.interest1;
             profilePage_interest2.Text = App.currentUser.interest2;
-            profilePage_interest3.Text =  App.currentUser.interest3;
+            profilePage_interest3.Text = App.currentUser.interest3;
             profilePage_hobby1.Text = App.currentUser.hobby1;
             profilePage_hobby2.Text = App.currentUser.hobby2;
             profilePage_hobby3.Text = App.currentUser.hobby3;
         }
 
-/*        protected override async void OnAppearing()
-        {
-            base.OnAppearing();
-            listView.ItemsSource = await App.Database.GetUsersAsync();
-        }*/
+        /*        protected override async void OnAppearing()
+                {
+                    base.OnAppearing();
+                    listView.ItemsSource = await App.Database.GetUsersAsync();
+                }*/
 
         public void OnButtonClicked(object sender, EventArgs e)
         {

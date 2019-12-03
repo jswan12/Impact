@@ -33,7 +33,10 @@ namespace Impact
         {
             int[] levels = { -1, 1 };
             if (!levels.Contains(App.currentUser.user_type))
-                newPostStack.IsVisible = false;
+            {
+                newPostIcon.IsVisible = false;
+                homeFeedLabel.Margin = new Thickness(0, 0, 0, 0);
+            }
         }
 
         protected async void GetPosts()
