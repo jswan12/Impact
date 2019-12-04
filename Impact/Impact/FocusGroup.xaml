@@ -18,7 +18,7 @@
                 HeightRequest="125"
                 HorizontalOptions="Center">
         <StackLayout x:Name="FocusPage" WidthRequest="330" Orientation="Vertical" BackgroundColor="Transparent" >
-          <Label Text="Something academic" FontAttributes="Bold" FontSize="20" TextColor="Black" BackgroundColor="White" >
+          <Label Text="Important Computer Science Convention" FontAttributes="Bold" FontSize="20" TextColor="Black" BackgroundColor="White" >
           <Label.FontFamily>
            <OnPlatform x:TypeArguments="x:String">
              <On Platform="iOS" Value="Typo Grotesk Black Demo.otf" />
@@ -27,7 +27,7 @@
           </Label.FontFamily>
           </Label>
           <BoxView WidthRequest="1" HeightRequest=".3" BackgroundColor="Black"/>
-          <Label x:Name="maingroup5" Text="This post will cover the importance of front end development in terms of grabbing the users attention and keeping them interested in using your product!"/>
+          <Label x:Name="maingroup5" Text="CVPR 2020: The topic of the convention focuses on computer vision and pattern recognition for those of you interested in furthing your knwoledge on these areas of study."/>
          </StackLayout>
        </Frame>
       </StackLayout>
