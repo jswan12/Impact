@@ -11,6 +11,18 @@
              NavigationPage.HasNavigationBar="True">
     <AbsoluteLayout Margin="3,0,3,3">
             <FlexLayout IsVisible="True" JustifyContent="SpaceEvenly" Direction="Column" AlignItems="Center" Margin="20,0,20,0" >
+                <Label Text="Academic Interests:"
+                    FontSize="Title"
+                     TextColor="Orange"
+                     HorizontalOptions="Start"
+                     VerticalOptions="Start">
+                     <Label.FontFamily>
+                             <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Typo Grotesk Black Demo.otf" />
+                            <On Platform="Android" Value="Typo Grotesk Black Demo.otf#Typo Grotesk Demo" />
+                        </OnPlatform>
+                    </Label.FontFamily>
+                </Label>
                 <Picker x:Name="interests1Picker"
                     Title="Select Interest 1"
                     TitleColor="WhiteSmoke"
@@ -18,13 +30,13 @@
                     BackgroundColor="Transparent">
                   <Picker.ItemsSource>
                      <x:Array Type="{x:Type x:String}">
-                     <x:String>Acting or entertaining</x:String>
-                     <x:String>Communication</x:String>
-                     <x:String>Film</x:String>
-                     <x:String>Problem Solving</x:String>
-                     <x:String>Languages</x:String>
-                     <x:String>Media</x:String>
-                     <x:String>Social Justice</x:String>
+                     <x:String>Robotics</x:String>
+                     <x:String>Space research</x:String>
+                     <x:String>Genetics</x:String>
+                     <x:String>Nanotechnology</x:String>
+                     <x:String>Agricultural Science</x:String>
+                     <x:String>Number Theory</x:String>
+                     <x:String>Logic</x:String>
                      </x:Array>
                   </Picker.ItemsSource>
                 </Picker>
@@ -35,13 +47,13 @@
                     BackgroundColor="Transparent">
                   <Picker.ItemsSource>
                      <x:Array Type="{x:Type x:String}">
-                     <x:String>Acting or entertaining</x:String>
-                     <x:String>Communication</x:String>
-                     <x:String>Film</x:String>
-                     <x:String>Problem Solving</x:String>
-                     <x:String>Languages</x:String>
-                     <x:String>Media</x:String>
-                     <x:String>Social Justice</x:String>
+                     <x:String>Robotics</x:String>
+                     <x:String>Space research</x:String>
+                     <x:String>Genetics</x:String>
+                     <x:String>Nanotechnology</x:String>
+                     <x:String>Agricultural Science</x:String>
+                     <x:String>Number Theory</x:String>
+                     <x:String>Logic</x:String>
                      </x:Array>
                   </Picker.ItemsSource>
                 </Picker>
@@ -52,16 +64,28 @@
                     BackgroundColor="Transparent">
                   <Picker.ItemsSource>
                      <x:Array Type="{x:Type x:String}">
-                     <x:String>Acting or entertaining</x:String>
-                     <x:String>Communication</x:String>
-                     <x:String>Film</x:String>
-                     <x:String>Problem Solving</x:String>
-                     <x:String>Languages</x:String>
-                     <x:String>Media</x:String>
-                     <x:String>Social Justice</x:String>
+                    <x:String>Robotics</x:String>
+                     <x:String>Space research</x:String>
+                     <x:String>Genetics</x:String>
+                     <x:String>Nanotechnology</x:String>
+                     <x:String>Agricultural Science</x:String>
+                     <x:String>Number Theory</x:String>
+                     <x:String>Logic</x:String>
                      </x:Array>
                   </Picker.ItemsSource>
                 </Picker>
+                <Label Text="Hobbies:"
+                    FontSize="Title"
+                     TextColor="#0F516C"
+                     HorizontalOptions="Start"
+                     VerticalOptions="Start">
+                     <Label.FontFamily>
+                             <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Typo Grotesk Black Demo.otf" />
+                            <On Platform="Android" Value="Typo Grotesk Black Demo.otf#Typo Grotesk Demo" />
+                        </OnPlatform>
+                    </Label.FontFamily>
+                </Label>
                 <Picker x:Name="hobbies1Picker"
                     Title="Select Hobby 1"
                     TitleColor="WhiteSmoke"

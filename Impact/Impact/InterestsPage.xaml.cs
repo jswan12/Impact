@@ -17,13 +17,13 @@ namespace Impact
             InitializeComponent();
             this.newUserInfo = newUserInfo;
             var interestsList = new List<string>();
-            interestsList.Add("Acting or Entertaining");
-            interestsList.Add("Communication");
-            interestsList.Add("Film");
-            interestsList.Add("Problem Solving");
-            interestsList.Add("Languages");
-            interestsList.Add("Media");
-            interestsList.Add("Social Justice");
+            interestsList.Add("Robotics");
+            interestsList.Add("Space research");
+            interestsList.Add("Genetics");
+            interestsList.Add("Nanotechnology");
+            interestsList.Add("Agricultural Science");
+			interestsList.Add("Number Theory");
+			interestsList.Add("Logic");
 
             var interestsPicker = new Picker { Title = "Select an Interest", TitleColor = Color.Red };
             interestsPicker.ItemsSource = interestsList;
@@ -31,7 +31,7 @@ namespace Impact
             var hobbiesList = new List<string>();
             hobbiesList.Add("Writing");
             hobbiesList.Add("Cooking");
-            hobbiesList.Add("Photogrpahy");
+            hobbiesList.Add("Photography");
             hobbiesList.Add("Painting");
             hobbiesList.Add("Video Games");
             hobbiesList.Add("Media");

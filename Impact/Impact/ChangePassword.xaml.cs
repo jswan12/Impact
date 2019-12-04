@@ -14,16 +14,15 @@ using Xamarin.Forms.Xaml;
 namespace Impact
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Settings : ContentPage
+    public partial class ChangePassword : ContentPage
     {
-        public Settings()
+        public ChangePassword()
         {
             InitializeComponent();
             NavigationPage.SetHasBackButton(this, true);
             changePassword.ReturnCommand = new Command(() => confirmChangePassword.Focus());
             confirmChangePassword.ReturnCommand = new Command(() => submitPasswordChange.Focus());
         }
-
         private string ValidChangePassword()
         {
             string errorMessage = null;
@@ -54,7 +53,7 @@ namespace Impact
                 using (HttpClient client = new HttpClient())
                 {
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                    var changePassword_JSON = new StringContent(JsonConvert.SerializeObject(new {Password = changePassword.Text }), Encoding.UTF8, "application/json");
+                    var changePassword_JSON = new StringContent(JsonConvert.SerializeObject(new { Password = changePassword.Text }), Encoding.UTF8, "application/json");
                     HttpResponseMessage response = await client.PostAsync(new Uri("https://asp-impact.azurewebsites.net/api/Login"), changePassword_JSON);
                     string responseBody = response.Content.ReadAsStringAsync().Result.Replace("\\", "").Trim(new char[1] { '"' });
 
@@ -78,10 +77,9 @@ namespace Impact
             }
         }
 
-
         private async void submitPasswordChange_ButtonClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Settings());
+            await changePasswordAsync();
         }
     }
 }

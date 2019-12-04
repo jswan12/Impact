@@ -16,6 +16,7 @@ namespace Impact
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RegisterCredentialsPage : ContentPage
     {
+        private int user_type = 0;
         public RegisterCredentialsPage()
         {
             InitializeComponent();
@@ -94,7 +95,7 @@ namespace Impact
                 {
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                     var newLoginCredentials_JSON = new StringContent(JsonConvert.SerializeObject(new { Email_Address = emailEntry.Text, Password = passwordEntry.Text }), Encoding.UTF8, "application/json");
-                    HttpResponseMessage response = await client.PostAsync(new Uri("https://asp-impact.azurewebsites.net/api/Login?user_type=" + 0), newLoginCredentials_JSON);
+                    HttpResponseMessage response = await client.PostAsync(new Uri("https://asp-impact.azurewebsites.net/api/Login?user_type=" + user_type), newLoginCredentials_JSON);
                     string responseBody = response.Content.ReadAsStringAsync().Result.Replace("\\", "").Trim(new char[1] { '"' });
                     
                     if (response.StatusCode == System.Net.HttpStatusCode.Accepted)
@@ -122,6 +123,34 @@ namespace Impact
         private void OnLoginTapped(object sender, EventArgs e)
         {
             App.instance.ClearNavigationAndGoToPage(new LoginPage());
+        }
+
+        private void OnStudentTapped(object sender, EventArgs e)
+        {
+            user_type = 0;
+            MentorLabel.BackgroundColor = Color.Transparent;
+            MentorLabel.FontAttributes = FontAttributes.None;
+            StudentLabel.FontAttributes = FontAttributes.Bold;
+            StudentLabel.BackgroundColor = Color.Orange;
+
+        }
+
+        private async void OnMentorTappedAsync(object sender, EventArgs e)
+        {
+            if (user_type == 1)
+                return;
+
+            bool answer = await DisplayAlert("Mentor Selected", "By pressing this button you are choosing to become a mentor, is this correct?", "YES", "NO");
+            if (answer == true)
+            {
+                user_type = 1;
+                StudentLabel.BackgroundColor = Color.Transparent;
+                StudentLabel.FontAttributes = FontAttributes.None;
+                MentorLabel.FontAttributes = FontAttributes.Bold;
+                MentorLabel.BackgroundColor = Color.Orange;
+            }
+            else
+                return;
         }
     }
 }

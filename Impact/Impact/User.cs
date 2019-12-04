@@ -8,6 +8,7 @@ namespace Impact
     public class User
     {
         public int uid { get; set; }
+        public string imageUrl { get; set; }
         public string email_address { get; set; }
         public int credentials_id { get; set; }
         public string name { get; set; }
@@ -23,5 +24,6 @@ namespace Impact
         public string hobby1 { get; set; }
         public string hobby2 { get; set; }
         public string hobby3 { get; set; }
+        public string bio { get; set; }
     }
 }
