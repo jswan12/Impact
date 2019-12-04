@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Impact.Android", "Impact\Im
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Impact.iOS", "Impact\Impact.iOS\Impact.iOS.csproj", "{26B1EADC-F2EA-40DA-8A5A-D033FF203D70}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Impact", "Impact\Impact\Impact.csproj", "{C11BF6D4-FC19-488D-98D2-62D99EB9EEE2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Impact", "Impact\Impact\Impact.csproj", "{C11BF6D4-FC19-488D-98D2-62D99EB9EEE2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

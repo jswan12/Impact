@@ -7,8 +7,16 @@
              x:Class="Impact.MessagePage"
              Title="Messages" IconImageSource="outline_chat_black_18dp.png">
     <ContentPage.Content>
-        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-            <Label Text="Message Page"/>
-        </StackLayout>
+        <FlexLayout Margin="1">
+            <StackLayout Spacing="3">
+                <ListView x:Name="listMessages" ItemsSource="{Binding Messages}" HasUnevenRows="True" ItemTapped="OnItemSelected" SeparatorVisibility="None" IsPullToRefreshEnabled="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ImageCell Text="{Binding userName}" TextColor="Orange" Detail="{Binding lastText}" DetailColor="Black" ImageSource="{Binding universityImageUrl}"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </FlexLayout>
     </ContentPage.Content>
 </ContentPage>

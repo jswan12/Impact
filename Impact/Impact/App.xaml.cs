@@ -12,6 +12,9 @@ namespace Impact
         public static App instance;
         //public static HttpClient client = new HttpClient();
 
+        //Hardcode for Messages to work
+        public static string User = "User";
+
         static LocalDatabase database;
         public static LocalDatabase Database
         {
