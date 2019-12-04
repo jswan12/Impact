@@ -23,9 +23,6 @@
     <Compile Update="TabMainPage.xaml.cs">
       <DependentUpon>TabMainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Settings.xaml.cs">
-      <DependentUpon>Settings.xaml</DependentUpon>
-    </Compile>
     <Compile Update="RegistrationPage.xaml.cs">
       <DependentUpon>RegistrationPage.xaml</DependentUpon>
     </Compile>

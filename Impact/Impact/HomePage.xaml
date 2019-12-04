@@ -9,17 +9,24 @@
             BackgroundImageSource="blue_to_orange_gradient.jpg"
              Title="Home" IconImageSource="outline_house_black_18dp.png">
     <ContentPage.Content>
-        <FlexLayout Margin="20,20,20,20">
+        <StackLayout Margin="20,20,20,20">
             <StackLayout Spacing="10" BackgroundColor="Transparent">
                 <StackLayout BackgroundColor="Transparent" Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
-                    <Label x:Name="homeFeedLabel" Text="Home Feed" TextColor="White" HorizontalOptions="Center" Margin="122,0,0,0" VerticalOptions="Center"/>
+                    <Label x:Name="homeFeedLabel" Text="Home Feed" TextColor="White" HorizontalOptions="Center" Margin="122,0,0,0" VerticalOptions="Center">
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <On Platform="iOS" Value="Typo Grotesk Demo.otf" />
+                                <On Platform="Android" Value="Typo Grotesk Demo.otf#Typo Grotesk Demo" />
+                            </OnPlatform>
+                        </Label.FontFamily>
+                    </Label>
                     <Image x:Name="newPostIcon" Source="post_add.png" HeightRequest="30" WidthRequest="30" Margin="86,0,0,0">
                         <Image.GestureRecognizers>
                             <TapGestureRecognizer Tapped="NewPost_ButtonClicked"/>
                         </Image.GestureRecognizers>
                     </Image>
                 </StackLayout>
-                <ListView x:Name="listHomePosts" HasUnevenRows="True" ItemTapped="OnItemSelected" SeparatorColor="Black" IsPullToRefreshEnabled="True" Margin="0,0,0,10">
+                <ListView BackgroundColor="Transparent"  x:Name="listHomePosts" HasUnevenRows="True" ItemTapped="OnItemSelected" SeparatorColor="Black" IsPullToRefreshEnabled="True" Margin="0,0,0,10">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell x:Name="userImage">
@@ -35,6 +42,6 @@
                     </ListView.ItemTemplate>
                 </ListView>
             </StackLayout>
-        </FlexLayout>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

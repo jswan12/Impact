@@ -16,6 +16,7 @@ namespace Impact
         public TabMainPage()
         {
             InitializeComponent();
+            this.CurrentPage = this.Children[4];
         }
     }
 }

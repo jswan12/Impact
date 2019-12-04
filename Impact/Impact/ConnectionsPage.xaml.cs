@@ -56,6 +56,7 @@ namespace Impact
                         if(responseBody.Equals("No Active Connections"))
                         {
                             listActive.ItemsSource = trends;
+                            listActive.SeparatorColor = Color.Transparent;
                             listActiveNoItems.IsVisible = true;
                         }
                         else
@@ -71,6 +72,7 @@ namespace Impact
 
         protected async void GetRequested()
         {
+            listRequested.SeparatorColor = Color.Transparent;
             listRequestedNoItems.IsVisible = true;
         }
 

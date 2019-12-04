@@ -67,7 +67,18 @@ namespace Impact
         }
         private async void Settings_ButtonClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Settings());
+            string action = await DisplayActionSheet("Settings", "Cancel", null, "Legal & Policies", "Report Misconduct", "Change Password", "Log Out");
+            if (string.Equals(action, "Legal & Policies", StringComparison.OrdinalIgnoreCase))
+                await DisplayAlert("Legal and Policies", "Impact is not liable for any misconduct or misfortune that arises from communication." +
+                "If you are a victim of misconduct, please refer to our Report page ", "OK");
+            else if (string.Equals(action, "Report Misconduct", StringComparison.OrdinalIgnoreCase))
+                await DisplayAlert("Report", "To report misconduct, please email administration.", "OK");
+            else if (string.Equals(action, "Change Password", StringComparison.OrdinalIgnoreCase))
+                await Navigation.PushAsync(new ChangePassword());
+            else if (string.Equals(action, "Log Out", StringComparison.OrdinalIgnoreCase))
+                App.instance.logoutCurrentUser();
+            else
+                return;
         }
 
         private async void Edit_ButtonClicked(object sender, EventArgs e)

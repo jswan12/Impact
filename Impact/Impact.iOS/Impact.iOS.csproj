@@ -144,4 +144,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\post_add.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\double_arrow_black.png" />
+  </ItemGroup>
 </Project>

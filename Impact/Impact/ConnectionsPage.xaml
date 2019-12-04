@@ -61,7 +61,7 @@
                     </ListView.ItemTemplate>
                 </ListView>
             </StackLayout>
-            <StackLayout Orientation="Vertical" BackgroundColor="Yellow">
+            <StackLayout Orientation="Vertical" BackgroundColor="Transparent">
                 <Button x:Name="viewMentorsButton" WidthRequest="330" CornerRadius="4" HeightRequest="45"
                     Clicked="viewMentorsButtonClicked"
                     BackgroundColor="WhiteSmoke"
