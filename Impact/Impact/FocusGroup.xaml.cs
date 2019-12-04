@@ -5,14 +5,15 @@ using Xamarin.Forms;
 
 namespace Impact
 {
-    public partial class MainGroup : ContentPage
+    public partial class FocusGroup : ContentPage
     {
-        public MainGroup()
+        public FocusGroup()
         {
             InitializeComponent();
             NavigationPage.SetHasBackButton(this, true);
 
         }
-
     }
 }
+    
+

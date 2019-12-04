@@ -6,26 +6,69 @@
              mc:Ignorable="d"
              x:Class="Impact.MainGroup"
              x:Name="MainGroup_content"  
-             Title="Professor 1 Posts"
-             NavigationPage.HasBackButton="True"
-             BackgroundColor="Transparent">
-  <FlexLayout JustifyContent="SpaceEvenly" AlignItems="Center" Direction="Column" Margin="20,20,20,20">
-    <AbsoluteLayout Margin="5,0,5,5">
-        <Frame BorderColor="Blue"
-               CornerRadius="5"
-               Padding="8">
-            <StackLayout>
-                <Editor Text="Post 1 Topic"
-                    FontSize="Medium"
-                    FontAttributes="Bold"
-                    HorizontalOptions="Fill"/>
-                    <BoxView Color="Black"
-                    HeightRequest="2"
-                    HorizontalOptions="Fill" />
-                <Editor Text="Summary of Topic 1"
-                         HorizontalOptions="Fill"/>
-            </StackLayout>
-         </Frame>
-    </AbsoluteLayout>
-  </FlexLayout>
+             Title="Back"
+             BackgroundImageSource="blue_to_orange_gradient.jpg"
+             NavigationPage.HasBackButton="True">
+   <ScrollView>
+      <StackLayout Spacing="20">
+          <Frame CornerRadius="10" 
+                Padding="10"
+                Margin="1"
+                IsClippedToBounds="True"
+                HeightRequest="125"
+                HorizontalOptions="Center">
+        <StackLayout x:Name="BioStack" WidthRequest="330" Orientation="Vertical" BackgroundColor="Transparent" >
+          <Label Text="Software Engineering: UI" FontAttributes="Bold" FontSize="20" TextColor="Black" BackgroundColor="White" >
+          <Label.FontFamily>
+           <OnPlatform x:TypeArguments="x:String">
+             <On Platform="iOS" Value="Typo Grotesk Black Demo.otf" />
+             <On Platform="Android" Value="Typo Grotesk Black Demo.otf#Typo Grotesk Demo" />
+           </OnPlatform>
+          </Label.FontFamily>
+          </Label>
+          <BoxView WidthRequest="1" HeightRequest=".3" BackgroundColor="Black"/>
+          <Label x:Name="maingroup" Text="This post will cover the importance of front end development in terms of grabbing the users attention and keeping them interested in using your product!"/>
+         </StackLayout>
+       </Frame>
+        <Frame CornerRadius="10" 
+                Padding="10"
+                Margin="1"
+                IsClippedToBounds="True"
+                HeightRequest="125"
+                HorizontalOptions="Center">
+        <StackLayout x:Name="BioStack3" WidthRequest="330" Orientation="Vertical" BackgroundColor="Transparent" >
+          <Label Text="'Don't Make Me Think'" FontAttributes="Bold" FontSize="20" TextColor="Black" BackgroundColor="White" >
+          <Label.FontFamily>
+           <OnPlatform x:TypeArguments="x:String">
+             <On Platform="iOS" Value="Typo Grotesk Black Demo.otf" />
+             <On Platform="Android" Value="Typo Grotesk Black Demo.otf#Typo Grotesk Demo" />
+           </OnPlatform>
+          </Label.FontFamily>
+          </Label>
+          <BoxView WidthRequest="1" HeightRequest=".3" BackgroundColor="Black"/>
+          <Label x:Name="maingroup3" Text="Important book to read for Software Engineers:" LineBreakMode="WordWrap"/>
+           <Image Source="https://prodimage.images-bn.com/pimages/9780321965516_p0_v1_s550x406.jpg" WidthRequest="70" HeightRequest="70"/>
+         </StackLayout>
+       </Frame>
+       <Frame CornerRadius="10" 
+                Padding="10"
+                Margin="1"
+                IsClippedToBounds="True"
+                HeightRequest="125"
+                HorizontalOptions="Center">
+        <StackLayout x:Name="BioStack4" WidthRequest="330" Orientation="Vertical" BackgroundColor="Transparent" >
+          <Label Text="'Top Ten Most Disastrous Software Bugs'" FontAttributes="Bold" FontSize="20" TextColor="Black" BackgroundColor="White" >
+          <Label.FontFamily>
+           <OnPlatform x:TypeArguments="x:String">
+             <On Platform="iOS" Value="Typo Grotesk Black Demo.otf" />
+             <On Platform="Android" Value="Typo Grotesk Black Demo.otf#Typo Grotesk Demo" />
+           </OnPlatform>
+          </Label.FontFamily>
+          </Label>
+          <BoxView WidthRequest="1" HeightRequest=".3" BackgroundColor="Black"/>
+          <Label x:Name="maingroup4" Text="This article covers a multitude of software bugs that even the most advanced coders still face today. Give the article a read!" LineBreakMode="WordWrap"/>
+         </StackLayout>
+       </Frame>
+       </StackLayout>
+   </ScrollView>
 </ContentPage>

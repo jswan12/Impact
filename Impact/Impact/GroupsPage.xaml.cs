@@ -22,27 +22,12 @@ namespace Impact
             await Navigation.PushAsync(new MainGroup());
         }
 
-        async private void mainGroup2_ButtonClicked(object sender, EventArgs e)
+        private async void mainGroup2_ButtonClicked(object sender, EventArgs e)
         {
-            await DisplayAlert("Alert", "You have been alerted", "OK");
+            await Navigation.PushAsync(new FocusGroup());
         }
 
         async private void mainGroup3_ButtonClicked(object sender, EventArgs e)
-        {
-            await DisplayAlert("Alert", "You have been alerted", "OK");
-        }
-
-        async private void subGroupA_ButtonClicked(object sender, EventArgs e)
-        {
-            await DisplayAlert("Alert", "You have been alerted", "OK");
-        }
-
-        async private void subGroupB_ButtonClicked(object sender, EventArgs e)
-        {
-            await DisplayAlert("Alert", "You have been alerted", "OK");
-        }
-
-        async private void subGroupC_ButtonClicked(object sender, EventArgs e)
         {
             await DisplayAlert("Alert", "You have been alerted", "OK");
         }

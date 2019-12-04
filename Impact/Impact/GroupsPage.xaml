@@ -5,14 +5,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Impact.GroupsPage"
-             Title="Groups" IconImageSource="outline_group_black_18dp.png">
+             Title="" IconImageSource="outline_group_black_18dp.png"
+             BackgroundImageSource="blue_to_orange_gradient.jpg">
     <ContentPage.Content>
-     <AbsoluteLayout Margin="3,0,3,3">
       <FlexLayout IsVisible="True" JustifyContent="SpaceEvenly" Direction="Column" AlignItems="Center" Margin="20,0,20,0">
-        <StackLayout HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand">
-            <Label Text="MainGroups:"
+   <StackLayout Spacing="5" HorizontalOptions="Center">
+            <Label Text="Mentor Forums:"
                 FontSize="40"
-                TextColor="Black"
+                TextColor="White"
                 HorizontalOptions="Center"
                 VerticalOptions="Center">
                 <Label.FontFamily>
@@ -22,42 +22,44 @@
                     </OnPlatform>
                 </Label.FontFamily>
             </Label>
+        </StackLayout>
             <Button x:Name="MainGroups1"
                     Clicked="mainGroup1_ButtonClicked"
                     FontSize="Medium"
-                    TextColor="White"
-                    BorderColor="Orange"
-                    BackgroundColor="Orange"
+                    TextColor="#0F516C"
+                    BorderColor="WhiteSmoke"
+                    BackgroundColor="WhiteSmoke"
                     CornerRadius="5"
                     FlexLayout.AlignSelf="Stretch"
                     HorizontalOptions="CenterAndExpand"
-                    Text="Professor 1">
+                    Text="Anas Mahmoud ->">
             </Button>
             <Button x:Name="MainGroups2"
                     Clicked="mainGroup2_ButtonClicked"
                     FontSize="Medium"
-                    TextColor="White"
-                    BorderColor="Orange"
-                    BackgroundColor="Orange"
+                    TextColor="#0F516C"
+                    BorderColor="WhiteSmoke"
+                    BackgroundColor="WhiteSmoke"
                     CornerRadius="5"
                     FlexLayout.AlignSelf="Stretch"
                     HorizontalOptions="CenterAndExpand"
-                    Text="Professor 2">
+                    Text="Jian Zhang ->">
             </Button>
             <Button x:Name="MainGroups3"
                     Clicked="mainGroup3_ButtonClicked"
                     FontSize="Medium"
-                    TextColor="White"
-                    BorderColor="Orange"
-                    BackgroundColor="Orange"
+                    TextColor="#0F516C"
+                    BorderColor="WhiteSmoke"
+                    BackgroundColor="WhiteSmoke"
                     CornerRadius="5"
                     FlexLayout.AlignSelf="Stretch"
                     HorizontalOptions="CenterAndExpand"
-                    Text="Professor 3">
+                    Text="Jinwei Ye ->">
             </Button>
-            <Label Text="SubGroups:"
+         <StackLayout Spacing="5" HorizontalOptions="Center" VerticalOptions="Center">
+            <Label Text="Focus Groups:"
                 FontSize="40"
-                TextColor="Black"
+                TextColor="White"
                 HorizontalOptions="Center"
                 VerticalOptions="Center">
                 <Label.FontFamily>
@@ -67,41 +69,8 @@
                     </OnPlatform>
                 </Label.FontFamily>
             </Label>
-            <Button x:Name="SubGroupsA"
-                    Clicked="subGroupA_ButtonClicked"
-                    FontSize="Medium"
-                    TextColor="White"
-                    BorderColor="Orange"
-                    BackgroundColor="Orange"
-                    CornerRadius="5"
-                    FlexLayout.AlignSelf="Stretch"
-                    HorizontalOptions="CenterAndExpand"
-                    Text="Focus A">
-            </Button>
-            <Button x:Name="SubGroupsB"
-                    Clicked="subGroupB_ButtonClicked"
-                    FontSize="Medium"
-                    TextColor="White"
-                    BorderColor="Orange"
-                    BackgroundColor="Orange"
-                    CornerRadius="5"
-                    FlexLayout.AlignSelf="Stretch"
-                    HorizontalOptions="CenterAndExpand"
-                    Text="Focus B">
-            </Button>
-            <Button x:Name="SubGroupsC"
-                    Clicked="subGroupC_ButtonClicked"
-                    FontSize="Medium"
-                    TextColor="White"
-                    BorderColor="Orange"
-                    BackgroundColor="Orange"
-                    CornerRadius="5"
-                    FlexLayout.AlignSelf="Stretch"
-                    HorizontalOptions="CenterAndExpand"
-                    Text="Focus C">
-            </Button>
-        </StackLayout>
+            <Label Text="You are not currently a member of any focus groups"/>
+         </StackLayout>
       </FlexLayout>
-     </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>
