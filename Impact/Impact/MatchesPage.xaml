@@ -37,23 +37,41 @@
                     <StackLayout Padding="24" Margin="20,0,20,0" HorizontalOptions="Center" VerticalOptions="Center" Orientation="Vertical" BackgroundColor="Transparent">
                         <Frame BackgroundColor="WhiteSmoke" CornerRadius="10" HasShadow="True" HorizontalOptions="Center" VerticalOptions="Center">
 
-                            <StackLayout BackgroundColor="Transparent" WidthRequest="330" Margin="0,0,0,20">
-                                <image:CircleImage Source="{Binding ImageUrl}" Aspect="AspectFit" HeightRequest="120" WidthRequest="120" HorizontalOptions="Center" BackgroundColor="Transparent" Margin="0,20,0,0"/>
-
-                                <Label Text="{Binding User_Name}"
-                        FontAttributes="Bold"
-                        FontSize="Large"
-                        TextColor="#0F516C"
-                        HorizontalOptions="Center"
-                        VerticalOptions="Center" />
-
-                                <Label Text="{Binding Location}" HorizontalOptions="Center" FontAttributes="Italic" TextColor="#0F516C"/>
+                            <StackLayout BackgroundColor="Transparent" WidthRequest="330" Margin="0,0,0,10">
+                                <image:CircleImage Source="{Binding imageUrl}" Aspect="AspectFit" HeightRequest="120" WidthRequest="120" HorizontalOptions="Center" BackgroundColor="Transparent" Margin="0,20,0,0"/>
+                                <Label Text="{Binding name}" FontSize="30" TextColor="#0F516C" HorizontalOptions="Center">
+                                    <Label.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="iOS" Value="Typo Grotesk Demo.otf" />
+                                            <On Platform="Android" Value="Typo Grotesk Demo.otf#Typo Grotesk Demo" />
+                                        </OnPlatform>
+                                    </Label.FontFamily>
+                                </Label>
+                                <Label FontAttributes="Italic" HorizontalOptions="Center" TextColor="Orange">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="{Binding city}"/>
+                                            <Span Text=", "/>
+                                            <Span Text="{Binding state}"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
                                 <BoxView WidthRequest="1" HeightRequest=".3" BackgroundColor="Black" Margin="0,10,0,10"/>
-                                <Label Text="{Binding Details}"
-                                        HorizontalOptions="Center"
-                                        Margin="10,0,10,20"
-                                        LineBreakMode="WordWrap" />
-                                <Button Text="Send Request" FontSize="Large" BackgroundColor="WhiteSmoke" CornerRadius="4" BorderColor="#0F516C" BorderWidth="1" TextColor="#0F516C" Clicked="OnButtonClicked">
+                                <StackLayout x:Name="InterestAndHobbiesStack" BackgroundColor="Transparent" Orientation="Vertical" WidthRequest="330" Margin="0,0,0,10">
+                                    <StackLayout Orientation="Horizontal"  WidthRequest="330" BackgroundColor="Transparent">
+                                        <StackLayout Orientation="Vertical" BackgroundColor="Transparent" HorizontalOptions="CenterAndExpand">
+                                            <Label Text="{Binding interest1}" TextColor="#0F516C"/>
+                                            <Label Text="{Binding interest2}" TextColor="#0F516C"/>
+                                            <Label Text="{Binding interest3}" TextColor="#0F516C"/>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Vertical" BackgroundColor="Transparent" HorizontalOptions="CenterAndExpand">
+                                            <Label Text="{Binding hobby1}" TextColor="#0F516C"/>
+                                            <Label Text="{Binding hobby2}" TextColor="#0F516C"/>
+                                            <Label Text="{Binding hobby3}" TextColor="#0F516C"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
+                                <Button Text="Send Request" FontSize="Large" BackgroundColor="WhiteSmoke" CornerRadius="4" BorderColor="#0F516C" BorderWidth="1" TextColor="#0F516C" Clicked="OnButtonClicked" Margin="0,10,0,0">
                                     <Button.FontFamily>
                                         <OnPlatform x:TypeArguments="x:String">
                                             <On Platform="iOS" Value="Typo Grotesk Demo.otf" />

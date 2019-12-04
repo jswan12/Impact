@@ -3,17 +3,67 @@
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-            mc:Ignorable="d"
+             xmlns:Image="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             mc:Ignorable="d"
             x:Class="Impact.ConnectionsPage"
             BackgroundImageSource="blue_to_orange_gradient.jpg"
             Title="Connections" IconImageSource="outline_swap_calls_black_18dp.png">
     <ContentPage.Content>
-        <FlexLayout AlignItems="Center" Direction="Column" Margin="20,20,20,20">
-            <StackLayout>
-                <!--Button Margin Is Temporary, remove after adding the list view-->
+        <StackLayout Margin="20,20,20,20">
+            <StackLayout Spacing="10" BackgroundColor="Transparent" Orientation="Vertical">
+                <Label Text="Active Connections" TextColor="White" FontSize="30" HorizontalTextAlignment="Center">
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Typo Grotesk Demo.otf" />
+                            <On Platform="Android" Value="Typo Grotesk Demo.otf#Typo Grotesk Demo" />
+                        </OnPlatform>
+                    </Label.FontFamily>
+                </Label>
+                <Label 
+                    x:Name="listActiveNoItems" Margin="0,0,0,10"
+                    VerticalOptions="Center"  
+                    HorizontalOptions="Center"  
+                    Text="You don't have any active connections"
+                    IsVisible="False"/>
+                <ListView BackgroundColor="Transparent" x:Name="listActive" HasUnevenRows="True" SeparatorColor="Black" IsPullToRefreshEnabled="True" Margin="0,0,0,10">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" BackgroundColor="WhiteSmoke">
+                                    <Image:CircleImage Source="{Binding imageUrl}" Margin="10,5,5,5" Aspect="AspectFill" HeightRequest="50" WidthRequest="50"/>
+                                    <Label Text="{Binding name}" TextColor="#0F516C" FontAttributes="Bold" FontSize="20" VerticalOptions="Center"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <StackLayout Spacing="10" BackgroundColor="Transparent" Orientation="Vertical">
+                <Label Text="Requested Connections" TextColor="White" FontSize="30" HorizontalTextAlignment="Center">
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="iOS" Value="Typo Grotesk Demo.otf" />
+                            <On Platform="Android" Value="Typo Grotesk Demo.otf#Typo Grotesk Demo" />
+                        </OnPlatform>
+                    </Label.FontFamily>
+                </Label>
+                <Label 
+                    x:Name="listRequestedNoItems" Margin="0,0,0,10"
+                    VerticalOptions="Center"  
+                    HorizontalOptions="Center"  
+                    Text="You don't have any pending requests"
+                    IsVisible="False"/>
+                <ListView BackgroundColor="Transparent" x:Name="listRequested" HasUnevenRows="True" SeparatorColor="Black" IsPullToRefreshEnabled="True" Margin="0,0,0,10">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ImageCell x:Name="userImage" Text="{Binding name}" TextColor="#0F516C" ImageSource="{Binding imageUrl}"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <StackLayout Orientation="Vertical" BackgroundColor="Yellow">
                 <Button x:Name="viewMentorsButton" WidthRequest="330" CornerRadius="4" HeightRequest="45"
                     Clicked="viewMentorsButtonClicked"
-                    Margin="0,450,0,0"
                     BackgroundColor="WhiteSmoke"
                     FontSize="Medium"
                     TextColor="#0F516C"
@@ -26,6 +76,6 @@
                     </Button.FontFamily>
                 </Button>
             </StackLayout>
-        </FlexLayout>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
