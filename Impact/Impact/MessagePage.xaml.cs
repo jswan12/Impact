@@ -27,7 +27,10 @@ namespace Impact
         private async void OnItemSelected(Object sender, ItemTappedEventArgs e)
         {
             var mydetails = e.Item as MessagePageConnections;
-            await Navigation.PushAsync(new MessagePageChat());
+            if (mydetails.userName.Equals("anas mahmoud", StringComparison.OrdinalIgnoreCase))
+                await Navigation.PushAsync(new MessagePageChat(0));
+            else
+                await Navigation.PushAsync(new MessagePageChat(1));
         }
 
     }

@@ -23,24 +23,27 @@ namespace Impact
         public ICommand MessageAppearingCommand { get; set; }
         public ICommand MessageDisappearingCommand { get; set; }
 
-        public MessagesViewModel()
+        public MessagesViewModel(int previous)
         {
-            //Fake previous hardcoded conversation
-            Messages.Insert(0, new Message() { Text = "Test", User = App.User });
-            Messages.Insert(0, new Message() { Text = "Test!" });
-            Messages.Insert(0, new Message() { Text = "Hey, what's up?", User = App.User });
-            Messages.Insert(0, new Message() { Text = "Nothing much, just working on the messaging feature" });
-            Messages.Insert(0, new Message() { Text = "Hopefully it will be done in time" });
-            Messages.Insert(0, new Message() { Text = "I'm sure you'll get it doen", User = App.User });
-            Messages.Insert(0, new Message() { Text = "*done", User = App.User });
-            Messages.Insert(0, new Message() { Text = "Yeah lol I hope so.." });
-            Messages.Insert(0, new Message() { Text = "You ready for the demo on thursday?", User = App.User });
-            Messages.Insert(0, new Message() { Text = "Yeah" });
-            Messages.Insert(0, new Message() { Text = "I'm a little nervous but hopefully we'll do well" });
-            Messages.Insert(0, new Message() { Text = "Yeah, same. I think we'll do great!", User = App.User });
-            Messages.Insert(0, new Message() { Text = "Yeah, we'll see" });
-            Messages.Insert(0, new Message() { Text = "Alright, see you then. Good luck!", User = App.User });
-            Messages.Insert(0, new Message() { Text = "Thanks, you too!" });
+            if (previous == 1)
+            {
+                //Fake previous hardcoded conversation
+                Messages.Insert(0, new Message() { Text = "Test", User = App.User });
+                Messages.Insert(0, new Message() { Text = "Test!" });
+                Messages.Insert(0, new Message() { Text = "Hey, what's up?", User = App.User });
+                Messages.Insert(0, new Message() { Text = "Nothing much, just working on the messaging feature" });
+                Messages.Insert(0, new Message() { Text = "Hopefully it will be done in time" });
+                Messages.Insert(0, new Message() { Text = "I'm sure you'll get it doen", User = App.User });
+                Messages.Insert(0, new Message() { Text = "*done", User = App.User });
+                Messages.Insert(0, new Message() { Text = "Yeah lol I hope so.." });
+                Messages.Insert(0, new Message() { Text = "You ready for the demo on thursday?", User = App.User });
+                Messages.Insert(0, new Message() { Text = "Yeah" });
+                Messages.Insert(0, new Message() { Text = "I'm a little nervous but hopefully we'll do well" });
+                Messages.Insert(0, new Message() { Text = "Yeah, same. I think we'll do great!", User = App.User });
+                Messages.Insert(0, new Message() { Text = "Yeah, we'll see" });
+                Messages.Insert(0, new Message() { Text = "Alright, see you then. Good luck!", User = App.User });
+                Messages.Insert(0, new Message() { Text = "Thanks, you too!" });
+            }
 
             //Perhaps scroll through dialogue to let audience read
 
@@ -124,7 +127,7 @@ namespace Impact
                 }
             });
             //End scripted hardcoded dialogue. 
-                                                                                          
+
             /* I was too lazy to make a function to be able to easily create and change       *
              * the scripted dialogue, so anything we want to add or change, just manupulate   *
              * the code above. Hopefully its easy to recognize how to add new ones. We should *

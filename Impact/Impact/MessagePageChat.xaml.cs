@@ -12,10 +12,10 @@ namespace Impact
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MessagePageChat : ContentPage
     {
-        public MessagePageChat()
+        public MessagePageChat(int previous)
         {
             InitializeComponent();
-            this.BindingContext = new MessagesViewModel();
+            this.BindingContext = new MessagesViewModel(previous);
         }
 
         public void ScrollTap(object sender, System.EventArgs e)
