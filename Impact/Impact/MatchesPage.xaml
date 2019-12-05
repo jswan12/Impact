@@ -23,7 +23,7 @@
             ScaleOut="0.8" />
     </pages:PopupPage.Animation>
     <StackLayout BackgroundColor="Transparent" Margin="20,20,20,20">
-        <Label Text="Swipe Left To View Other Mentors" FontSize="20" HorizontalOptions="Center" VerticalOptions="Center" TextColor="WhiteSmoke" Margin="0,0,0,15">
+        <Label Text="Swipe Left To View Other Mentors" FontSize="20" HorizontalOptions="Center" VerticalOptions="Center" TextColor="WhiteSmoke">
             <Label.FontFamily>
                 <OnPlatform x:TypeArguments="x:String">
                     <On Platform="iOS" Value="Typo Grotesk Black Demo.otf" />
@@ -31,7 +31,7 @@
                 </OnPlatform>
             </Label.FontFamily>
         </Label>
-        <CarouselView x:Name="mentorListView" Margin="0,30,0,0">
+        <CarouselView x:Name="mentorListView" Margin="0,15,0,0" MinimumHeightRequest="470" HeightRequest="470">
             <CarouselView.ItemTemplate>
                 <DataTemplate>
                     <StackLayout Padding="24" Margin="20,0,20,0" HorizontalOptions="Center" VerticalOptions="Center" Orientation="Vertical" BackgroundColor="Transparent">
@@ -71,7 +71,7 @@
                                         </StackLayout>
                                     </StackLayout>
                                 </StackLayout>
-                                <Button Text="Send Request" FontSize="Large" BackgroundColor="WhiteSmoke" CornerRadius="4" BorderColor="#0F516C" BorderWidth="1" TextColor="#0F516C" Clicked="OnButtonClicked" Margin="0,10,0,0">
+                                <Button Text="Send Request" FontSize="Large" VerticalOptions="EndAndExpand" BackgroundColor="WhiteSmoke" CornerRadius="4" BorderColor="#0F516C" BorderWidth="1" TextColor="#0F516C" Clicked="OnButtonClicked" Margin="0,10,0,10">
                                     <Button.FontFamily>
                                         <OnPlatform x:TypeArguments="x:String">
                                             <On Platform="iOS" Value="Typo Grotesk Demo.otf" />
@@ -85,13 +85,15 @@
                 </DataTemplate>
             </CarouselView.ItemTemplate>
         </CarouselView>
-        <Button Text="Close" FontSize="Large" BackgroundColor="WhiteSmoke" CornerRadius="4" BorderColor="Crimson" BorderWidth="1" Clicked="Close" TextColor="Crimson" WidthRequest="300">
-            <Button.FontFamily>
-                <OnPlatform x:TypeArguments="x:String">
-                    <On Platform="iOS" Value="Typo Grotesk Demo.otf" />
-                    <On Platform="Android" Value="Typo Grotesk Demo.otf#Typo Grotesk Demo" />
-                </OnPlatform>
-            </Button.FontFamily>
-        </Button>
+        <StackLayout BackgroundColor="Transparent" VerticalOptions="EndAndExpand" HorizontalOptions="Center">
+            <Button Text="Close" FontSize="Large" BackgroundColor="WhiteSmoke" CornerRadius="4" BorderColor="Crimson" BorderWidth="1" Clicked="Close" TextColor="Crimson" WidthRequest="300">
+                <Button.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+                        <On Platform="iOS" Value="Typo Grotesk Demo.otf" />
+                        <On Platform="Android" Value="Typo Grotesk Demo.otf#Typo Grotesk Demo" />
+                    </OnPlatform>
+                </Button.FontFamily>
+            </Button>
+        </StackLayout>
     </StackLayout>
 </pages:PopupPage>

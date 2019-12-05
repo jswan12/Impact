@@ -19,7 +19,7 @@
                         </OnPlatform>
                     </Label.FontFamily>
                 </Label>
-                <ListView BackgroundColor="Transparent" x:Name="listMessages" ItemsSource="{Binding Messages}" HasUnevenRows="True" ItemTapped="OnItemSelected" SeparatorVisibility="None" IsPullToRefreshEnabled="True" Margin="0,0,0,10" SeparatorColor="Black" >
+                <ListView BackgroundColor="Transparent" x:Name="listMessages" ItemsSource="{Binding Messages}" HasUnevenRows="True" ItemTapped="OnItemSelected" SeparatorVisibility="Default" IsPullToRefreshEnabled="True" Margin="0,0,0,10" SeparatorColor="Black" >
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
